@@ -1,359 +1,431 @@
 {
   "format": "learning-tech-tree/v1",
-  "id": "cv-basics",
-  "title": "CV基础 知识树",
-  "subtitle": "由 Obsidian 笔记自动生成 · 点击节点跳转对应笔记",
-  "description": "每个节点对应 vault 中的一篇笔记，点击「在 Obsidian 中打开」可直接跳转。",
-  "version": "0.1.0",
+  "id": "cv-roadmap",
+  "title": "计算机视觉路线图",
+  "subtitle": "从 CNN 基础到目标检测实战",
+  "description": "以已有笔记为主体的学习路线图。实线是必须掌握的先修，虚线是可选方向。没有笔记的节点是待学习项目。",
+  "version": "1.0",
   "language": "zh-CN",
   "obsidianVault": "ob",
+  "obsidianNoteRoot": "CV基础/99-待学",
   "education": {
     "path": "self-study",
     "duration": null,
-    "note": "由笔记目录自动生成的浏览结构，不是课程方案。"
+    "note": "能力阶段划分，不代表课程安排或学制。"
   },
-  "stages": [
-    "入门",
-    "基础",
-    "进阶",
-    "实战"
-  ],
+  "stages": ["起点 · 深度学习基础", "图像分类骨干网络", "训练与迁移", "目标检测", "进阶方向"],
   "branches": [
-    {
-      "id": "b0",
-      "label": "01-图像分类",
-      "en": "01-图像分类",
-      "color": "#83b6df"
-    },
-    {
-      "id": "b1",
-      "label": "02-目标检测",
-      "en": "02-目标检测",
-      "color": "#7bd2c4"
-    },
-    {
-      "id": "b2",
-      "label": "CV基础",
-      "en": "CV基础",
-      "color": "#e5b575"
-    }
+    { "id": "foundation", "label": "基础", "en": "FOUNDATION", "color": "#83b6df" },
+    { "id": "classify", "label": "图像分类", "en": "CLASSIFICATION", "color": "#7bd2c4" },
+    { "id": "train", "label": "训练技巧", "en": "TRAINING", "color": "#e5b575" },
+    { "id": "detect", "label": "目标检测", "en": "DETECTION", "color": "#d98cb3" },
+    { "id": "advanced", "label": "进阶方向", "en": "ADVANCED", "color": "#9f8ce0" }
   ],
   "sources": [
     {
-      "id": "obsidian",
-      "title": "Obsidian vault: ob",
+      "id": "notes",
+      "title": "本人 Obsidian 笔记",
       "url": "",
-      "scope": "本地笔记，未上传。"
-    }
-  ],
-  "startId": "n_01-_____01-overview",
-  "endId": "finish",
-  "nodes": [
-    {
-      "id": "n_00-____",
-      "name": "计算机视觉",
-      "branch": "b2",
-      "stage": 0,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____01-overview"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/00-课程介绍.md",
-      "outcome": "读完并整理《计算机视觉》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "CV基础/00-课程介绍.md"
+      "scope": "vault 内 CV基础 与 06-AI大模型 的既有笔记，点击节点可直接跳转。"
     },
     {
-      "id": "n_01-_____01-overview",
-      "name": "1.1 图像分类简介",
-      "branch": "b0",
-      "stage": 1,
+      "id": "design",
+      "title": "作者编排的学习路线",
+      "url": "",
+      "scope": "先修关系与阶段划分是个人学习规划建议，不是任何机构培养方案。"
+    }
+  ],
+  "startId": "py_anchor",
+  "endId": "cv_finish",
+  "nodes": [
+    {
+      "id": "py_anchor",
+      "name": "起点：Python 与工具准备",
+      "branch": "foundation",
+      "stage": 0,
       "kind": "milestone",
       "prereqIds": [],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/01-overview.md",
-      "outcome": "读完并整理《1.1 图像分类简介》的关键结论与疑问。",
+      "description": "假定 Python 语法、虚拟环境与调试已掌握。本节点作为路线图入口，指向既有 Python 笔记。",
+      "outcome": "能独立跑通一个带第三方依赖的脚本，并用断点或日志定位报错。",
+      "caution": "此节点是入口锚点，不代表需要从头重学。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "02Python/windows安装虚拟环境.md"
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch 框架使用",
+      "branch": "foundation",
+      "stage": 0,
+      "kind": "core",
+      "prereqIds": ["py_anchor"],
+      "relatedIds": [],
+      "description": "张量操作、自动求导、Dataset/DataLoader、设备管理与模型保存加载。",
+      "outcome": "写出一个可复用的训练脚本，能固定随机种子复现同一结果。",
+      "caution": "只会调用高层 API 难以定位训练不收敛的原因。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/03-深度学习/01PyTorch框架使用.md"
+    },
+    {
+      "id": "nn_basic",
+      "name": "神经网络基础 ANN",
+      "branch": "foundation",
+      "stage": 0,
+      "kind": "core",
+      "prereqIds": ["py_anchor"],
+      "relatedIds": [],
+      "description": "前向计算、损失函数、梯度与参数更新的完整链条，激活函数的作用。",
+      "outcome": "手写一个两层网络的训练循环，并解释每一步的张量形状。",
+      "caution": "不理解梯度来源会导致调参变成碰运气。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/03-深度学习/02神经网络基础ANN.md"
+    },
+    {
+      "id": "activation",
+      "name": "激活函数",
+      "branch": "foundation",
+      "stage": 0,
+      "kind": "optional",
+      "prereqIds": ["nn_basic"],
+      "relatedIds": [],
+      "description": "常见激活函数的形状、导数性质与适用场景。",
+      "outcome": "能说明 ReLU 相对 Sigmoid 缓解梯度消失的原因。",
+      "caution": "细节问题，可在遇到训练失败时回头查阅。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/03-深度学习/什么是激活函数？.md"
+    },
+    {
+      "id": "cnn",
+      "name": "卷积神经网络 CNN",
+      "branch": "classify",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": ["nn_basic", "pytorch"],
+      "relatedIds": [],
+      "description": "卷积、池化、感受野与局部连接，CNN 为何适合图像。",
+      "outcome": "实现一个图像分类器，并解释每个模块对特征提取的作用。",
+      "caution": "能跑通训练脚本不等于理解卷积的归纳偏置。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/03-深度学习/03卷积神经网络CNN.md"
+    },
+    {
+      "id": "cls_intro",
+      "name": "图像分类简介",
+      "branch": "classify",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": ["cnn"],
+      "relatedIds": [],
+      "description": "图像分类任务的输入输出形式、评估口径与经典数据集。",
+      "outcome": "能说出分类任务中 top-1 / top-5 准确率的含义与局限。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/01-overview.md"
     },
     {
-      "id": "n_01-_____02-AlexNet",
-      "name": "1.2 AlexNet",
-      "branch": "b0",
+      "id": "alexnet",
+      "name": "AlexNet",
+      "branch": "classify",
       "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____01-overview"
-      ],
+      "prereqIds": ["cls_intro"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/02-AlexNet.md",
-      "outcome": "读完并整理《1.2 AlexNet》的关键结论与疑问。",
+      "description": "深度卷积网络的开端：ReLU、Dropout、GPU 训练的首次组合。",
+      "outcome": "画出 AlexNet 的结构图，说明每一层的作用与参数量来源。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/02-AlexNet.md"
     },
     {
-      "id": "n_01-_____03-VGGNet",
-      "name": "1.3 VGG",
-      "branch": "b0",
+      "id": "vgg",
+      "name": "VGG",
+      "branch": "classify",
       "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____02-AlexNet"
-      ],
+      "prereqIds": ["alexnet"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/03-VGGNet.md",
-      "outcome": "读完并整理《1.3 VGG》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "用重复的小卷积核堆叠加深网络，结构规整但参数多。",
+      "outcome": "说明为什么两个 3x3 卷积的感受野等价于一个 5x5。",
+      "caution": "参数集中在全连接层，显存占用高。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/03-VGGNet.md"
     },
     {
-      "id": "n_01-_____04-GoogLeNet",
-      "name": "1.4 GoogLeNet",
-      "branch": "b0",
+      "id": "googlenet",
+      "name": "GoogLeNet",
+      "branch": "classify",
       "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____03-VGGNet"
-      ],
+      "prereqIds": ["vgg"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/04-GoogLeNet.md",
-      "outcome": "读完并整理《1.4 GoogLeNet》的关键结论与疑问。",
+      "description": "Inception 模块：多尺度并行卷积与 1x1 降维。",
+      "outcome": "解释 1x1 卷积如何降低计算量，并写出 Inception 的拼接方式。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/04-GoogLeNet.md"
     },
     {
-      "id": "n_01-_____05-ResNet",
-      "name": "1.5 ResNet",
-      "branch": "b0",
+      "id": "resnet",
+      "name": "ResNet",
+      "branch": "classify",
       "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____04-GoogLeNet"
-      ],
+      "prereqIds": ["googlenet"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/05-ResNet.md",
-      "outcome": "读完并整理《1.5 ResNet》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "残差连接解决深层网络退化问题，是现代骨干的基础范式。",
+      "outcome": "说明残差块如何缓解梯度消失，并解释 bottleneck 结构。",
+      "caution": "残差连接是现代视觉模型的通用组件，务必掌握。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/05-ResNet.md"
     },
     {
-      "id": "n_01-_____06-____",
-      "name": "1.6 图像增强",
-      "branch": "b0",
-      "stage": 1,
+      "id": "augment",
+      "name": "图像增强",
+      "branch": "train",
+      "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____05-ResNet"
-      ],
+      "prereqIds": ["cls_intro"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/06-图像增强.md",
-      "outcome": "读完并整理《1.6 图像增强》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "几何与颜色变换、随机裁剪翻转，以及增强方式与任务的匹配。",
+      "outcome": "对比开启与关闭增强时的验证集曲线，说明差异原因。",
+      "caution": "增强方式与任务不匹配时会损害指标。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/06-图像增强.md"
     },
     {
-      "id": "n_01-_____07-____",
-      "name": "1.7 模型微调",
-      "branch": "b0",
-      "stage": 1,
+      "id": "finetune",
+      "name": "模型微调",
+      "branch": "train",
+      "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_____06-____"
-      ],
+      "prereqIds": ["resnet", "augment"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/07-模型微调.md",
-      "outcome": "读完并整理《1.7 模型微调》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "加载预训练权重、冻结策略、学习率设置与领域差异的处理。",
+      "outcome": "在小数据集上对比从头训练与微调的收敛速度差异。",
+      "caution": "冻结层数选择不当会让微调不如从头训练。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/07-模型微调.md"
     },
     {
-      "id": "n_01-_____08-________",
-      "name": "1.8 汽车车型分类案例",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____07-____"
-      ],
+      "id": "case_car",
+      "name": "实战：汽车车型分类",
+      "branch": "train",
+      "stage": 2,
+      "kind": "milestone",
+      "prereqIds": ["finetune"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/01-图像分类/08-汽车车型分类案例.md",
-      "outcome": "读完并整理《1.8 汽车车型分类案例》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "完整走一遍数据准备、训练、评估与推理的分类项目。",
+      "outcome": "产出一次完整分类实验记录，含指标、失败样例与改进方向。",
+      "caution": "案例跑通不等于能迁移到自己的数据。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/01-图像分类/08-汽车车型分类案例.md"
     },
     {
-      "id": "n_02-_____00-overview",
-      "name": "2.1 目标检测概述",
-      "branch": "b1",
-      "stage": 1,
+      "id": "det_intro",
+      "name": "目标检测概述",
+      "branch": "detect",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_00-____"
-      ],
+      "prereqIds": ["resnet"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/00-overview.md",
-      "outcome": "读完并整理《2.1 目标检测概述》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "检测与分类的区别：边界框回归、正负样本分配、mAP 评估口径。",
+      "outcome": "能说明 mAP、IoU、NMS 各自的定义与常见误用。",
+      "caution": "mAP 高不代表小目标或遮挡场景可用。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/00-overview.md"
     },
     {
-      "id": "n_02-_____01-RCNN",
-      "name": "2.2 R-CNN网络基础",
-      "branch": "b1",
-      "stage": 1,
+      "id": "rcnn",
+      "name": "R-CNN 网络基础",
+      "branch": "detect",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_02-_____00-overview"
-      ],
+      "prereqIds": ["det_intro"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/01-RCNN.md",
-      "outcome": "读完并整理《2.2 R-CNN网络基础》的关键结论与疑问。",
+      "description": "两阶段检测的开端：候选区域生成与特征提取的分离。",
+      "outcome": "说明 R-CNN 的流程瓶颈，以及它对后续改进的启发。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/01-RCNN.md"
     },
     {
-      "id": "n_02-_____02-Faster-RCNN",
-      "name": "2.3 Faster-RCNN网络",
-      "branch": "b1",
-      "stage": 1,
+      "id": "faster_rcnn",
+      "name": "Faster R-CNN",
+      "branch": "detect",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_02-_____01-RCNN"
-      ],
+      "prereqIds": ["rcnn"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/02-Faster-RCNN.md",
-      "outcome": "读完并整理《2.3 Faster-RCNN网络》的关键结论与疑问。",
+      "description": "RPN 网络与 ROI Pooling，把候选区域生成也交给网络。",
+      "outcome": "画出 Faster R-CNN 整体结构，说明 RPN 的损失如何设计。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/02-Faster-RCNN.md"
     },
     {
-      "id": "n_02-_____03-wheat_detection_fasterRCNN",
-      "name": "2.4 麦穗检测案例-FasterRCNN",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____02-Faster-RCNN"
-      ],
+      "id": "case_wheat",
+      "name": "实战：麦穗检测",
+      "branch": "detect",
+      "stage": 3,
+      "kind": "milestone",
+      "prereqIds": ["faster_rcnn"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/03-wheat_detection_fasterRCNN.md",
-      "outcome": "读完并整理《2.4 麦穗检测案例-FasterRCNN》的关键结论与疑问。",
+      "description": "用 Faster R-CNN 完成一个真实检测任务的数据准备与训练。",
+      "outcome": "产出含 mAP、按类别拆分指标与失败样例的检测报告。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/03-wheat_detection_fasterRCNN.md"
     },
     {
-      "id": "n_02-_____04-yolo",
-      "name": "2.5.yolo系列",
-      "branch": "b1",
-      "stage": 1,
+      "id": "yolo",
+      "name": "YOLO 系列总览",
+      "branch": "detect",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_02-_____03-wheat_detection_fasterRCNN"
-      ],
+      "prereqIds": ["det_intro", "resnet"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/04-yolo.md",
-      "outcome": "读完并整理《2.5.yolo系列》的关键结论与疑问。",
+      "description": "单阶段检测思路：把检测统一为回归问题，速度优先。",
+      "outcome": "对比单阶段与两阶段在速度与精度上的取舍。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/04-yolo.md"
     },
     {
-      "id": "n_02-_____05-yoloV4____",
-      "name": "2.6.yoloV4算法详解",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____04-yolo"
-      ],
+      "id": "yolov4",
+      "name": "YOLOv4 算法详解",
+      "branch": "detect",
+      "stage": 3,
+      "kind": "optional",
+      "prereqIds": ["yolo"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/05-yoloV4算法详解.md",
-      "outcome": "读完并整理《2.6.yoloV4算法详解》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "输入端、骨干、颈部与头部的组合优化策略。",
+      "outcome": "说明 YOLOv4 相比前代主要改进点各自解决什么问题。",
+      "caution": "版本细节多，可按需查阅而不必全部记住。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/05-yoloV4算法详解.md"
     },
     {
-      "id": "n_02-_____06-yoloV5____",
-      "name": "2.7.yoloV5算法详解及案例",
-      "branch": "b1",
-      "stage": 1,
+      "id": "yolov5",
+      "name": "YOLOv5 详解与案例",
+      "branch": "detect",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_02-_____05-yoloV4____"
-      ],
+      "prereqIds": ["yolo"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：CV基础/02-目标检测/06-yoloV5算法详解.md",
-      "outcome": "读完并整理《2.7.yoloV5算法详解及案例》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "工程化落地：数据格式、配置文件、训练与推理流程。",
+      "outcome": "用自己的数据跑通一次端到端训练，记录显存与耗时。",
+      "caution": "只调参数不理解标签格式，遇到异常难以自查。",
+      "sourceIds": ["notes"],
       "obsidianNote": "CV基础/02-目标检测/06-yoloV5算法详解.md"
     },
     {
-      "id": "finish",
-      "name": "知识收束与复盘",
-      "branch": "b0",
-      "stage": 3,
-      "kind": "milestone",
-      "prereqIds": [
-        "n_01-_____08-________",
-        "n_02-_____06-yoloV5____"
-      ],
+      "id": "seg_todo",
+      "name": "语义分割【待学习】",
+      "branch": "advanced",
+      "stage": 4,
+      "kind": "optional",
+      "prereqIds": ["resnet"],
       "relatedIds": [],
-      "description": "所有分支的末端汇入此处，用于整体复盘。",
-      "outcome": "写一页总结：已掌握的主题、仍存疑的问题、下一步方向。",
-      "caution": "这是浏览结构上的收束点，不代表学会了全部内容。",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": ""
+      "description": "像素级标注、上采样结构（U-Net 等）、IoU 与掩码评估。",
+      "outcome": "产出分割结果可视化并给出 IoU 与误差集中区域。",
+      "caution": "此节点尚无笔记，点击可一键创建。",
+      "sourceIds": ["design"]
+    },
+    {
+      "id": "vit_todo",
+      "name": "视觉 Transformer【待学习】",
+      "branch": "advanced",
+      "stage": 4,
+      "kind": "optional",
+      "prereqIds": ["resnet"],
+      "relatedIds": [],
+      "description": "图像分块、自注意力在视觉中的用法与计算代价。",
+      "outcome": "在同一数据集上与 CNN 基线做一次控制变量的公平对比。",
+      "caution": "小数据集上未必优于卷积结构。",
+      "sourceIds": ["design"]
+    },
+    {
+      "id": "deploy_todo",
+      "name": "模型部署与推理优化【待学习】",
+      "branch": "advanced",
+      "stage": 4,
+      "kind": "core",
+      "prereqIds": ["yolov5", "finetune"],
+      "relatedIds": [],
+      "description": "导出格式（ONNX 等）、批处理、半精度、量化与延迟测量。",
+      "outcome": "给出优化前后的延迟与精度对照表，注明硬件与输入尺寸。",
+      "caution": "没有同一硬件与输入尺寸的延迟数字没有可比性。",
+      "sourceIds": ["design"]
+    },
+    {
+      "id": "mlops_todo",
+      "name": "数据标注与实验管理【待学习】",
+      "branch": "advanced",
+      "stage": 4,
+      "kind": "optional",
+      "prereqIds": ["finetune"],
+      "relatedIds": [],
+      "description": "标注流程与规范、数据集版本管理、实验参数与结果的可追溯记录。",
+      "outcome": "建立一份可回查的实验记录表，能复现任意一次历史结果。",
+      "caution": "缺少实验管理时，改进往往无法归因。",
+      "sourceIds": ["design"]
+    },
+    {
+      "id": "cv_finish",
+      "name": "收束：可复现的视觉项目",
+      "branch": "advanced",
+      "stage": 4,
+      "kind": "milestone",
+      "prereqIds": ["case_car", "case_wheat", "yolov5", "deploy_todo"],
+      "relatedIds": [],
+      "description": "把分类与检测两条实战经验整合成一个可复现、可解释的完整项目。",
+      "outcome": "交付含代码、数据说明、训练记录与局限声明的作品条目。",
+      "caution": "不可复现的结果在技术评审中价值有限。",
+      "sourceIds": ["design"]
     }
   ],
-  "applicationEdges": []
+  "applicationEdges": [
+    {
+      "source": "augment",
+      "target": "yolov5",
+      "relation": "development",
+      "reason": "检测训练同样依赖数据增强，视觉上的增强经验可直接迁移。"
+    },
+    {
+      "source": "faster_rcnn",
+      "target": "yolov5",
+      "relation": "application",
+      "reason": "两阶段方法的评估口径（mAP、IoU、NMS）在单阶段检测中继续沿用，可对照理解。"
+    },
+    {
+      "source": "activation",
+      "target": "cnn",
+      "relation": "development",
+      "reason": "激活函数的选择直接影响卷积网络的训练稳定性。"
+    },
+    {
+      "source": "yolov4",
+      "target": "case_wheat",
+      "relation": "application",
+      "reason": "理解 v4 的改进策略后，可在同一检测任务上做版本对比实验。"
+    },
+    {
+      "source": "seg_todo",
+      "target": "cv_finish",
+      "relation": "application",
+      "reason": "若选择分割方向，其结果可作为完整视觉项目的组成部分。"
+    },
+    {
+      "source": "vit_todo",
+      "target": "cv_finish",
+      "relation": "application",
+      "reason": "视觉 Transformer 可作为项目中的替代骨干，与 CNN 基线对比。"
+    },
+    {
+      "source": "mlops_todo",
+      "target": "cv_finish",
+      "relation": "application",
+      "reason": "实验管理能力是交付可复现视觉项目的前提。"
+    }
+  ]
 }

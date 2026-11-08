@@ -1,2598 +1,530 @@
 {
   "format": "learning-tech-tree/v1",
-  "id": "ai-llm",
-  "title": "06-AI大模型 知识树",
-  "subtitle": "由 Obsidian 笔记自动生成 · 点击节点跳转对应笔记",
-  "description": "每个节点对应 vault 中的一篇笔记，点击「在 Obsidian 中打开」可直接跳转。",
-  "version": "0.1.0",
+  "id": "ai-roadmap",
+  "title": "大模型应用路线图",
+  "subtitle": "从 Transformer 到 Agent 与 RAG 落地",
+  "description": "以已有笔记为主体的学习路线图。实线是必须掌握的先修，虚线是可选方向。没有笔记的节点是待学习项目。",
+  "version": "1.0",
   "language": "zh-CN",
   "obsidianVault": "ob",
+  "obsidianNoteRoot": "06-AI大模型/99-待学",
   "education": {
     "path": "self-study",
     "duration": null,
-    "note": "由笔记目录自动生成的浏览结构，不是课程方案。"
+    "note": "能力阶段划分，不代表课程安排或学制。"
   },
-  "stages": [
-    "入门",
-    "基础",
-    "进阶",
-    "实战"
-  ],
+  "stages": ["起点 · 深度学习基础", "NLP 与 Transformer", "预训练与微调", "提示词工程", "Agent 与编排", "RAG 与工程落地"],
   "branches": [
-    {
-      "id": "b0",
-      "label": "01-数据分析",
-      "en": "01-数据分析",
-      "color": "#83b6df"
-    },
-    {
-      "id": "b1",
-      "label": "02-机器学习",
-      "en": "02-机器学习",
-      "color": "#7bd2c4"
-    },
-    {
-      "id": "b2",
-      "label": "03-深度学习",
-      "en": "03-深度学习",
-      "color": "#e5b575"
-    },
-    {
-      "id": "b3",
-      "label": "LangGraph",
-      "en": "LANGGRAPH",
-      "color": "#d98cb3"
-    },
-    {
-      "id": "b4",
-      "label": "NLP",
-      "en": "NLP",
-      "color": "#9f8ce0"
-    },
-    {
-      "id": "b5",
-      "label": "06-AI大模型",
-      "en": "06-AI大模型",
-      "color": "#6ad1ad"
-    },
-    {
-      "id": "b6",
-      "label": "docker",
-      "en": "DOCKER",
-      "color": "#e08b8b"
-    },
-    {
-      "id": "b7",
-      "label": "大模型微调课件",
-      "en": "大模型微调课件",
-      "color": "#a8c46a"
-    },
-    {
-      "id": "b8",
-      "label": "提示词工程",
-      "en": "提示词工程",
-      "color": "#83b6df"
-    },
-    {
-      "id": "b9",
-      "label": "智能体开发",
-      "en": "智能体开发",
-      "color": "#7bd2c4"
-    }
+    { "id": "foundation", "label": "基础", "en": "FOUNDATION", "color": "#83b6df" },
+    { "id": "nlp", "label": "NLP 与 Transformer", "en": "NLP", "color": "#7bd2c4" },
+    { "id": "pretrain", "label": "预训练模型", "en": "PRETRAIN", "color": "#e5b575" },
+    { "id": "prompt", "label": "提示词工程", "en": "PROMPTING", "color": "#d98cb3" },
+    { "id": "agent", "label": "Agent 与应用", "en": "AGENT", "color": "#9f8ce0" },
+    { "id": "rag", "label": "RAG 与工程", "en": "RAG", "color": "#6ad1ad" }
   ],
   "sources": [
     {
-      "id": "obsidian",
-      "title": "Obsidian vault: ob",
+      "id": "notes",
+      "title": "本人 Obsidian 笔记",
       "url": "",
-      "scope": "本地笔记，未上传。"
+      "scope": "vault 内 06-AI大模型 与 02Python 的既有笔记，点击节点可直接跳转。"
+    },
+    {
+      "id": "design",
+      "title": "作者编排的学习路线",
+      "url": "",
+      "scope": "先修关系与阶段划分是个人学习规划建议，不是任何机构培养方案。"
     }
   ],
-  "startId": "n_01-_______",
-  "endId": "finish",
+  "startId": "py_anchor",
+  "endId": "ai_finish",
   "nodes": [
     {
-      "id": "n_01-_____01-Numpy",
-      "name": "Numpy",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/01-Numpy.md",
-      "outcome": "读完并整理《Numpy》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/01-Numpy.md"
-    },
-    {
-      "id": "n_01-_____02-Pandas",
-      "name": "Pandas 数据分析",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____01-Numpy"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/02-Pandas.md",
-      "outcome": "读完并整理《Pandas 数据分析》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/02-Pandas.md"
-    },
-    {
-      "id": "n_01-_____03-Matplotlib",
-      "name": "Matplotlib",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____02-Pandas"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/03-Matplotlib.md",
-      "outcome": "读完并整理《Matplotlib》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/03-Matplotlib.md"
-    },
-    {
-      "id": "n_01-_____04-___RFM__",
-      "name": "扩展：RFM案例",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____03-Matplotlib"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/04-扩展：RFM案例.md",
-      "outcome": "读完并整理《扩展：RFM案例》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/04-扩展：RFM案例.md"
-    },
-    {
-      "id": "n_01-_____2_2_____",
-      "name": "2 广播机制",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____04-___RFM__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/2.2 广播机制.md",
-      "outcome": "读完并整理《2 广播机制》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/2.2 广播机制.md"
-    },
-    {
-      "id": "n_01-_____2_________1_____",
-      "name": "库的安装",
-      "branch": "b0",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/2.环境安装与使用/1.库的安装.md",
-      "outcome": "读完并整理《库的安装》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/2.环境安装与使用/1.库的安装.md"
-    },
-    {
-      "id": "n_01-_____2_________2_jupyter_notebook___",
-      "name": "jupyter notebook的使用",
-      "branch": "b0",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____2_________1_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/2.环境安装与使用/2.jupyter notebook的使用.md",
-      "outcome": "读完并整理《jupyter notebook的使用》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/2.环境安装与使用/2.jupyter notebook的使用.md"
-    },
-    {
-      "id": "n_01-_____5_1Seaborn_1_1__Seaborn-______",
-      "name": "1. Seaborn-绘制统计图形",
-      "branch": "b0",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/5.1Seaborn/1.1. Seaborn-绘制统计图形.md",
-      "outcome": "读完并整理《1. Seaborn-绘制统计图形》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/5.1Seaborn/1.1. Seaborn-绘制统计图形.md"
-    },
-    {
-      "id": "n_01-_____5_1Seaborn_1_2_________",
-      "name": "2. 用分类数据绘图",
-      "branch": "b0",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____5_1Seaborn_1_1__Seaborn-______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/5.1Seaborn/1.2. 用分类数据绘图.md",
-      "outcome": "读完并整理《2. 用分类数据绘图》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/5.1Seaborn/1.2. 用分类数据绘图.md"
-    },
-    {
-      "id": "n_01-_____5_1Seaborn_2_1____________",
-      "name": "1. 北京租房数据统计分析",
-      "branch": "b0",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____5_1Seaborn_1_2_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/5.1Seaborn/2.1. 北京租房数据统计分析.md",
-      "outcome": "读完并整理《1. 北京租房数据统计分析》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/5.1Seaborn/2.1. 北京租房数据统计分析.md"
-    },
-    {
-      "id": "n_01-_______",
-      "name": "总结",
-      "branch": "b0",
-      "stage": 1,
+      "id": "py_anchor",
+      "name": "起点：Python 与工具准备",
+      "branch": "foundation",
+      "stage": 0,
       "kind": "milestone",
       "prereqIds": [],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/总结.md",
-      "outcome": "读完并整理《总结》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/总结.md"
+      "description": "假定 Python 语法、虚拟环境与调试已掌握。本节点作为路线图入口，指向既有 Python 笔记。",
+      "outcome": "能独立跑通一个带第三方依赖的脚本，并用断点或日志定位报错。",
+      "caution": "此节点是入口锚点，不代表需要从头重学。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "02Python/windows安装虚拟环境.md"
     },
     {
-      "id": "n_01-___________one_hot___",
-      "name": "数据离散化+one hot 编码",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_____2_2_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/数据离散化+one hot 编码.md",
-      "outcome": "读完并整理《数据离散化+one hot 编码》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/数据离散化+one hot 编码.md"
-    },
-    {
-      "id": "n_01-______________",
-      "name": "正态分布和均匀分布",
-      "branch": "b0",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-___________one_hot___"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/01-数据分析/正态分布和均匀分布.md",
-      "outcome": "读完并整理《正态分布和均匀分布》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/01-数据分析/正态分布和均匀分布.md"
-    },
-    {
-      "id": "n_02-_____02KNN__",
-      "name": "KNN算法",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/02KNN算法.md",
-      "outcome": "读完并整理《KNN算法》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/02KNN算法.md"
-    },
-    {
-      "id": "n_02-_____03____",
-      "name": "线性回归",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____02KNN__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/03线性回归.md",
-      "outcome": "读完并整理《线性回归》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/03线性回归.md"
-    },
-    {
-      "id": "n_02-_____04____",
-      "name": "逻辑回归",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____03____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/04逻辑回归.md",
-      "outcome": "读完并整理《逻辑回归》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/04逻辑回归.md"
-    },
-    {
-      "id": "n_02-_____05___",
-      "name": "决策树",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____04____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/05决策树.md",
-      "outcome": "读完并整理《决策树》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/05决策树.md"
-    },
-    {
-      "id": "n_02-_____06____",
-      "name": "集成学习",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____05___"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/06集成学习.md",
-      "outcome": "读完并整理《集成学习》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/06集成学习.md"
-    },
-    {
-      "id": "n_02-_____07__",
-      "name": "聚类",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____06____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/07聚类.md",
-      "outcome": "读完并整理《聚类》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/07聚类.md"
-    },
-    {
-      "id": "n_02-_____6______6_1_____________",
-      "name": "1. 完整机器学习项目的流程",
-      "branch": "b1",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/6.拓展知识/6.1. 完整机器学习项目的流程.md",
-      "outcome": "读完并整理《1. 完整机器学习项目的流程》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/6.拓展知识/6.1. 完整机器学习项目的流程.md"
-    },
-    {
-      "id": "n_02-_____6______6_2_______",
-      "name": "2. 独立同分布",
-      "branch": "b1",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____6______6_1_____________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/6.拓展知识/6.2. 独立同分布.md",
-      "outcome": "读完并整理《2. 独立同分布》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/6.拓展知识/6.2. 独立同分布.md"
-    },
-    {
-      "id": "n_02-______________",
-      "name": "【复习】导数和矩阵",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-_____07__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/【复习】导数和矩阵.md",
-      "outcome": "读完并整理《【复习】导数和矩阵》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/【复习】导数和矩阵.md"
-    },
-    {
-      "id": "n_02-___________",
-      "name": "什么是拟合？",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-______________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/什么是拟合？.md",
-      "outcome": "读完并整理《什么是拟合？》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/什么是拟合？.md"
-    },
-    {
-      "id": "n_02-__________________",
-      "name": "什么是线性回归，正规方程法",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-___________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/什么是线性回归，正规方程法.md",
-      "outcome": "读完并整理《什么是线性回归，正规方程法》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/什么是线性回归，正规方程法.md"
-    },
-    {
-      "id": "n_02-__________",
-      "name": "数学：矩阵",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-__________________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/数学：矩阵.md",
-      "outcome": "读完并整理《数学：矩阵》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/数学：矩阵.md"
-    },
-    {
-      "id": "n_02-___________1",
-      "name": "朴素贝叶斯",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-__________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/朴素贝叶斯.md",
-      "outcome": "读完并整理《朴素贝叶斯》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/朴素贝叶斯.md"
-    },
-    {
-      "id": "n_02-___________excalidraw",
-      "name": "机器学习 .excalidraw",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-___________1"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/机器学习 .excalidraw.md",
-      "outcome": "读完并整理《机器学习 .excalidraw》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/机器学习 .excalidraw.md"
-    },
-    {
-      "id": "n_02-____________1",
-      "name": "机器学习概述",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-___________excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/机器学习概述.md",
-      "outcome": "读完并整理《机器学习概述》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/机器学习概述.md"
-    },
-    {
-      "id": "n_02-____________excalidraw",
-      "name": "机器学习算法.excalidraw",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_02-____________1"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/机器学习算法.excalidraw.md",
-      "outcome": "读完并整理《机器学习算法.excalidraw》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/机器学习算法.excalidraw.md"
-    },
-    {
-      "id": "n_02-_________",
-      "name": "步骤总结",
-      "branch": "b1",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/02-机器学习/步骤总结.md",
-      "outcome": "读完并整理《步骤总结》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/02-机器学习/步骤总结.md"
-    },
-    {
-      "id": "n_03-_____00______",
+      "id": "dl_intro",
       "name": "深度学习简介",
-      "branch": "b2",
-      "stage": 1,
+      "branch": "foundation",
+      "stage": 0,
       "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
+      "prereqIds": ["py_anchor"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/00深度学习简介.md",
-      "outcome": "读完并整理《深度学习简介》的关键结论与疑问。",
+      "description": "深度学习要解决什么问题、与传统方法的区别、整体学习地图。",
+      "outcome": "能用一段话说明监督学习、损失函数与优化三者的关系。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/03-深度学习/00深度学习简介.md"
     },
     {
-      "id": "n_03-_____01PyTorch____",
-      "name": "PyTorch框架使用",
-      "branch": "b2",
-      "stage": 1,
+      "id": "nn_basic",
+      "name": "神经网络基础 ANN",
+      "branch": "foundation",
+      "stage": 0,
       "kind": "core",
-      "prereqIds": [
-        "n_03-_____00______"
-      ],
+      "prereqIds": ["dl_intro"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/01PyTorch框架使用.md",
-      "outcome": "读完并整理《PyTorch框架使用》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/01PyTorch框架使用.md"
-    },
-    {
-      "id": "n_03-_____02______ANN",
-      "name": "神经网络基础ANN",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____01PyTorch____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/02神经网络基础ANN.md",
-      "outcome": "读完并整理《神经网络基础ANN》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "前向传播、反向传播、损失与梯度更新的完整链条。",
+      "outcome": "手写一个两层网络的训练循环，并解释每一次参数更新。",
+      "caution": "不理解梯度来源会导致调参变成碰运气。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/03-深度学习/02神经网络基础ANN.md"
     },
     {
-      "id": "n_03-_____03______CNN",
-      "name": "卷积神经网络CNN",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____02______ANN"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/03卷积神经网络CNN.md",
-      "outcome": "读完并整理《卷积神经网络CNN》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/03卷积神经网络CNN.md"
-    },
-    {
-      "id": "n_03-_____04______RNN",
-      "name": "循环神经网络RNN",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____03______CNN"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/04循环神经网络RNN.md",
-      "outcome": "读完并整理《循环神经网络RNN》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/04循环神经网络RNN.md"
-    },
-    {
-      "id": "n_03-_____PyTorch____-mindmap",
-      "name": "PyTorch框架使用-mindmap",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____04______RNN"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/PyTorch框架使用-mindmap.md",
-      "outcome": "读完并整理《PyTorch框架使用-mindmap》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/PyTorch框架使用-mindmap.md"
-    },
-    {
-      "id": "n_03-_____________",
-      "name": "什么是激活函数？",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____PyTorch____-mindmap"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/什么是激活函数？.md",
-      "outcome": "读完并整理《什么是激活函数？》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/什么是激活函数？.md"
-    },
-    {
-      "id": "n_03-___________excalidraw",
-      "name": "深度学习 .excalidraw",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-_____________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/深度学习 .excalidraw.md",
-      "outcome": "读完并整理《深度学习 .excalidraw》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/深度学习 .excalidraw.md"
-    },
-    {
-      "id": "n_03-___________-mindmap",
-      "name": "深度学习简介-mindmap",
-      "branch": "b2",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_03-___________excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/03-深度学习/深度学习简介-mindmap.md",
-      "outcome": "读完并整理《深度学习简介-mindmap》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/03-深度学习/深度学习简介-mindmap.md"
-    },
-    {
-      "id": "LangGraph____",
-      "name": "状态机",
-      "branch": "b3",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/LangGraph/状态机.md",
-      "outcome": "读完并整理《状态机》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/LangGraph/状态机.md"
-    },
-    {
-      "id": "NLP_excalidraw",
-      "name": "NLP.excalidraw",
-      "branch": "b5",
+      "id": "pytorch",
+      "name": "PyTorch 与 Transformers 库",
+      "branch": "foundation",
       "stage": 0,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
+      "prereqIds": ["nn_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP.excalidraw.md",
-      "outcome": "读完并整理《NLP.excalidraw》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP.excalidraw.md"
+      "description": "张量、自动求导、模型保存加载，以及 HuggingFace Transformers 的基本用法。",
+      "outcome": "加载一个预训练模型完成一次推理，并说明输入输出张量的含义。",
+      "caution": "库的 API 变化快，优先掌握概念而非记忆调用。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/03-深度学习/01PyTorch框架使用.md"
     },
     {
-      "id": "NLP_1__________1_________",
-      "name": " 自然语言处理入门",
-      "branch": "b4",
-      "stage": 2,
+      "id": "rnn",
+      "name": "RNN 及其变体",
+      "branch": "nlp",
+      "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
+      "prereqIds": ["nn_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/1.自然语言处理入门/1 自然语言处理入门.md",
-      "outcome": "读完并整理《 自然语言处理入门》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/1.自然语言处理入门/1 自然语言处理入门.md"
-    },
-    {
-      "id": "NLP_2_______1_______",
-      "name": "认识文本预处理",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/1认识文本预处理.md",
-      "outcome": "读完并整理《认识文本预处理》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/1认识文本预处理.md"
-    },
-    {
-      "id": "NLP_2_______2_________",
-      "name": "文本处理的基本方法",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______1_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/2文本处理的基本方法.md",
-      "outcome": "读完并整理《文本处理的基本方法》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/2文本处理的基本方法.md"
-    },
-    {
-      "id": "NLP_2_______3________",
-      "name": "文本张量表示方法",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______2_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/3文本张量表示方法.md",
-      "outcome": "读完并整理《文本张量表示方法》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/3文本张量表示方法.md"
-    },
-    {
-      "id": "NLP_2_______4______",
-      "name": "文本数据分析 - NLP文本预处理教程",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______3________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/4文本数据分析.md",
-      "outcome": "读完并整理《文本数据分析 - NLP文本预处理教程》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/4文本数据分析.md"
-    },
-    {
-      "id": "NLP_2_______5______",
-      "name": "文本特征处理",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______4______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/5文本特征处理.md",
-      "outcome": "读完并整理《文本特征处理》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/5文本特征处理.md"
-    },
-    {
-      "id": "NLP_2_______6______",
-      "name": "文本数据增强",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______5______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/6文本数据增强.md",
-      "outcome": "读完并整理《文本数据增强》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/6文本数据增强.md"
-    },
-    {
-      "id": "NLP_2_______7_jieba_____",
-      "name": " jieba词性对照表",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_2_______6______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/2.文本预处理/7 jieba词性对照表.md",
-      "outcome": "读完并整理《 jieba词性对照表》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/7 jieba词性对照表.md"
-    },
-    {
-      "id": "NLP_3_RNN_____1__RNN__",
-      "name": "认识RNN模型",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/1认识RNN模型.md",
-      "outcome": "读完并整理《认识RNN模型》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/1认识RNN模型.md"
-    },
-    {
-      "id": "NLP_3_RNN_____2__RNN__",
-      "name": "传统RNN模型",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____1__RNN__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/2传统RNN模型.md",
-      "outcome": "读完并整理《传统RNN模型》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/2传统RNN模型.md"
-    },
-    {
-      "id": "NLP_3_RNN_____3LSTM__",
-      "name": "LSTM模型",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____2__RNN__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/3LSTM模型.md",
-      "outcome": "读完并整理《LSTM模型》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "序列建模、RNN/LSTM/GRU 的结构与梯度问题。",
+      "outcome": "说明 LSTM 的门控如何缓解长序列梯度消失。",
+      "caution": "理解 RNN 的局限，才知道 Transformer 为何取代它。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/3LSTM模型.md"
     },
     {
-      "id": "NLP_3_RNN_____4GRU__",
-      "name": "GRU模型",
-      "branch": "b4",
-      "stage": 2,
+      "id": "attention",
+      "name": "注意力机制",
+      "branch": "nlp",
+      "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____3LSTM__"
-      ],
+      "prereqIds": ["rnn"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/4GRU模型.md",
-      "outcome": "读完并整理《GRU模型》的关键结论与疑问。",
+      "description": "注意力的直觉：从序列对齐到加权求和，Query/Key/Value 的来源。",
+      "outcome": "用矩阵形式写出缩放点积注意力的计算过程。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/4GRU模型.md"
-    },
-    {
-      "id": "NLP_3_RNN_____5RNN_______",
-      "name": "RNN案例人名分类器",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____4GRU__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/5RNN案例人名分类器.md",
-      "outcome": "读完并整理《RNN案例人名分类器》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/5RNN案例人名分类器.md"
-    },
-    {
-      "id": "NLP_3_RNN_____6_______1",
-      "name": "注意力机制介绍1",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____5RNN_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/6注意力机制介绍1.md",
-      "outcome": "读完并整理《注意力机制介绍1》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/6注意力机制介绍1.md"
     },
     {
-      "id": "NLP_3_RNN_____7_______2",
-      "name": "注意力机制介绍2",
-      "branch": "b4",
-      "stage": 2,
+      "id": "transformer",
+      "name": "Transformer 架构",
+      "branch": "nlp",
+      "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____6_______1"
-      ],
+      "prereqIds": ["attention"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/7注意力机制介绍2.md",
-      "outcome": "读完并整理《注意力机制介绍2》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/7注意力机制介绍2.md"
-    },
-    {
-      "id": "NLP_3_RNN_____8RNN__seq2seq___",
-      "name": "RNN案例seq2seq英译法",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_3_RNN_____7_______2"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/3.RNN及其变体/8RNN案例seq2seq英译法.md",
-      "outcome": "读完并整理《RNN案例seq2seq英译法》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/8RNN案例seq2seq英译法.md"
-    },
-    {
-      "id": "NLP_4_Transformer_1_Transformer____",
-      "name": " Transformer背景介绍",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/1 Transformer背景介绍.md",
-      "outcome": "读完并整理《 Transformer背景介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/1 Transformer背景介绍.md"
-    },
-    {
-      "id": "NLP_4_Transformer_2__Transformer__",
-      "name": "认识Transformer架构",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_1_Transformer____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/2认识Transformer架构.md",
-      "outcome": "读完并整理《认识Transformer架构》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "编码器-解码器结构、位置编码、多头注意力与残差层归一化。",
+      "outcome": "画出 Transformer 的完整结构图，并说明每个模块的数据流。",
+      "caution": "这是大模型时代最重要的结构，务必理解透彻。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/NLP/4.Transformer/2认识Transformer架构.md"
     },
     {
-      "id": "NLP_4_Transformer_3______",
-      "name": "输入部分实现",
-      "branch": "b4",
-      "stage": 2,
+      "id": "transformer_code",
+      "name": "Transformer 逐模块实现",
+      "branch": "nlp",
+      "stage": 1,
       "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_2__Transformer__"
-      ],
+      "prereqIds": ["transformer"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/3输入部分实现.md",
-      "outcome": "读完并整理《输入部分实现》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/3输入部分实现.md"
-    },
-    {
-      "id": "NLP_4_Transformer_4_______",
-      "name": "编码器部分实现",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_3______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/4编码器部分实现.md",
-      "outcome": "读完并整理《编码器部分实现》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/4编码器部分实现.md"
-    },
-    {
-      "id": "NLP_4_Transformer_5_______",
-      "name": "解码器部分实现",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_4_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/5解码器部分实现.md",
-      "outcome": "读完并整理《解码器部分实现》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/5解码器部分实现.md"
-    },
-    {
-      "id": "NLP_4_Transformer_6______",
-      "name": "输出部分实现",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_5_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/6输出部分实现.md",
-      "outcome": "读完并整理《输出部分实现》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/6输出部分实现.md"
-    },
-    {
-      "id": "NLP_4_Transformer_7____",
-      "name": "模型构建",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_6______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/7模型构建.md",
-      "outcome": "读完并整理《模型构建》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "输入部分、编码器、解码器、输出部分的分步实现与张量形状追踪。",
+      "outcome": "从零实现一个可运行的 Transformer，并解释每一步形状变化。",
+      "caution": "只读结构不实现，很难发现理解上的漏洞。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/NLP/4.Transformer/7模型构建.md"
     },
     {
-      "id": "NLP_4_Transformer________",
-      "name": "词嵌入层的本质",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_4_Transformer_7____"
-      ],
+      "id": "self_attention",
+      "name": "自注意力与多头机制精讲",
+      "branch": "nlp",
+      "stage": 1,
+      "kind": "optional",
+      "prereqIds": ["attention"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/4.Transformer/词嵌入层的本质.md",
-      "outcome": "读完并整理《词嵌入层的本质》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/词嵌入层的本质.md"
-    },
-    {
-      "id": "NLP_5______1fasttext____",
-      "name": "fasttext模型架构",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/1fasttext模型架构.md",
-      "outcome": "读完并整理《fasttext模型架构》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/1fasttext模型架构.md"
-    },
-    {
-      "id": "NLP_5______2_fasttext__",
-      "name": " fasttext实操",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______1fasttext____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/2 fasttext实操.md",
-      "outcome": "读完并整理《 fasttext实操》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/2 fasttext实操.md"
-    },
-    {
-      "id": "NLP_5______2_fasttext____",
-      "name": " fasttext文本分类",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______2_fasttext__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/2 fasttext文本分类.md",
-      "outcome": "读完并整理《 fasttext文本分类》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/2 fasttext文本分类.md"
-    },
-    {
-      "id": "NLP_5______3_____",
-      "name": "训练词向量",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______2_fasttext____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/3训练词向量.md",
-      "outcome": "读完并整理《训练词向量》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/3训练词向量.md"
-    },
-    {
-      "id": "NLP_5______4_____",
-      "name": "词向量迁移",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______3_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/4词向量迁移.md",
-      "outcome": "读完并整理《词向量迁移》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/4词向量迁移.md"
-    },
-    {
-      "id": "NLP_5______5______",
-      "name": "迁移学习概念",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______4_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/5迁移学习概念.md",
-      "outcome": "读完并整理《迁移学习概念》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/5迁移学习概念.md"
-    },
-    {
-      "id": "NLP_5______6NLP_________",
-      "name": "NLP中的常用预训练模型",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______5______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/6NLP中的常用预训练模型.md",
-      "outcome": "读完并整理《NLP中的常用预训练模型》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/6NLP中的常用预训练模型.md"
-    },
-    {
-      "id": "NLP_5______7_Transformers___",
-      "name": " Transformers库使用",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______6NLP_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/7 Transformers库使用.md",
-      "outcome": "读完并整理《 Transformers库使用》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/7 Transformers库使用.md"
-    },
-    {
-      "id": "NLP_5______8______",
-      "name": "迁移学习实践",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______7_Transformers___"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/8迁移学习实践.md",
-      "outcome": "读完并整理《迁移学习实践》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/8迁移学习实践.md"
-    },
-    {
-      "id": "NLP_5______9NLP_____________",
-      "name": "NLP中的标准数据集（拓展资料)",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_5______8______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/5.迁移学习/9NLP中的标准数据集（拓展资料).md",
-      "outcome": "读完并整理《NLP中的标准数据集（拓展资料)》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/9NLP中的标准数据集（拓展资料).md"
-    },
-    {
-      "id": "NLP_6_Bert_____1BERT____",
-      "name": "BERT模型介绍",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/1BERT模型介绍.md",
-      "outcome": "读完并整理《BERT模型介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/1BERT模型介绍.md"
-    },
-    {
-      "id": "NLP_6_Bert_____2BERT____",
-      "name": "BERT模型特点",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_6_Bert_____1BERT____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/2BERT模型特点.md",
-      "outcome": "读完并整理《BERT模型特点》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/2BERT模型特点.md"
-    },
-    {
-      "id": "NLP_6_Bert_____3BERT______",
-      "name": "BERT系列模型介绍",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_6_Bert_____2BERT____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/3BERT系列模型介绍.md",
-      "outcome": "读完并整理《BERT系列模型介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/3BERT系列模型介绍.md"
-    },
-    {
-      "id": "NLP_6_Bert_____4ELMo____",
-      "name": "ELMo模型介绍",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_6_Bert_____3BERT______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/4ELMo模型介绍.md",
-      "outcome": "读完并整理《ELMo模型介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/4ELMo模型介绍.md"
-    },
-    {
-      "id": "NLP_6_Bert_____5GPT____",
-      "name": "GPT模型介绍",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_6_Bert_____4ELMo____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/5GPT模型介绍.md",
-      "outcome": "读完并整理《GPT模型介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/5GPT模型介绍.md"
-    },
-    {
-      "id": "NLP_6_Bert_____6_BERT_GPT_ELMo_____",
-      "name": "BERT、GPT、ELMo模型的对比",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_6_Bert_____5GPT____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/6.Bert系列模型/6 BERT GPT ELMo模型的对比.md",
-      "outcome": "读完并整理《BERT、GPT、ELMo模型的对比》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/6 BERT GPT ELMo模型的对比.md"
-    },
-    {
-      "id": "NLP_7_Transformer___________1_Transformer______",
-      "name": "Transformer Decoder 模块详解",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_01-_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/1 Transformer各子模块作用.md",
-      "outcome": "读完并整理《Transformer Decoder 模块详解》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/1 Transformer各子模块作用.md"
-    },
-    {
-      "id": "NLP_7_Transformer___________2_Transformer_Decoder__",
-      "name": " Transformer Decoder模块",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_7_Transformer___________1_Transformer______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/2 Transformer Decoder模块.md",
-      "outcome": "读完并整理《 Transformer Decoder模块》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/2 Transformer Decoder模块.md"
-    },
-    {
-      "id": "NLP_7_Transformer___________3_Self_attention____",
-      "name": "3 Self-attention 机制详解",
-      "branch": "b4",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_7_Transformer___________2_Transformer_Decoder__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/3 Self attention机制详解.md",
-      "outcome": "读完并整理《3 Self-attention 机制详解》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "自注意力的计算细节、多头为何有效、各子模块的具体作用。",
+      "outcome": "能回答「为什么需要多头」「位置编码为何用正弦函数」。",
+      "caution": "细节问题，可在面试准备或调优时回头查阅。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/3 Self attention机制详解.md"
     },
     {
-      "id": "NLP_7_Transformer___________4_Multi_head_Attention__",
-      "name": " Multi head Attention详解",
-      "branch": "b4",
+      "id": "text_preprocess",
+      "name": "文本预处理与表示",
+      "branch": "nlp",
+      "stage": 1,
+      "kind": "optional",
+      "prereqIds": ["nn_basic"],
+      "relatedIds": [],
+      "description": "分词、词表构建、文本张量表示与数据分析方法。",
+      "outcome": "能说明 subword 分词相对词级分词的优势。",
+      "caution": "传统 NLP 流程，现代大模型已大幅简化，可按需了解。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/1认识文本预处理.md"
+    },
+    {
+      "id": "embedding",
+      "name": "词嵌入与迁移学习概念",
+      "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "NLP_7_Transformer___________3_Self_attention____"
-      ],
+      "prereqIds": ["transformer"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/4 Multi head Attention详解.md",
-      "outcome": "读完并整理《 Multi head Attention详解》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/4 Multi head Attention详解.md"
+      "description": "词向量的本质、预训练加微调的范式、对比学习与负样本的作用。",
+      "outcome": "说明预训练如何把通用语言知识迁移到下游任务。",
+      "caution": "预训练范式是理解 BERT 与 LLM 的基础。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/5迁移学习概念.md"
     },
     {
-      "id": "NLP_7_Transformer___________5_Transformer__",
-      "name": " Transformer优势",
-      "branch": "b4",
+      "id": "bert",
+      "name": "BERT 与 GPT 模型对比",
+      "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "NLP_7_Transformer___________4_Multi_head_Attention__"
-      ],
+      "prereqIds": ["embedding"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/5 Transformer优势.md",
-      "outcome": "读完并整理《 Transformer优势》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/5 Transformer优势.md"
+      "description": "双向编码与自回归生成的区别、各自适用的任务类型。",
+      "outcome": "能说明 BERT 与 GPT 在预训练目标和推理方式上的差异。",
+      "caution": "搞混两类模型会导致选型错误。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/6 BERT GPT ELMo模型的对比.md"
     },
     {
-      "id": "ai____",
-      "name": "ai学习记录",
-      "branch": "b5",
-      "stage": 0,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/ai学习记录.md",
-      "outcome": "读完并整理《ai学习记录》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/ai学习记录.md"
-    },
-    {
-      "id": "docker_01____ECS___",
-      "name": "阿里云ECS服务器",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/01.阿里云ECS服务器.md",
-      "outcome": "读完并整理《阿里云ECS服务器》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/01.阿里云ECS服务器.md"
-    },
-    {
-      "id": "docker_02_Docker_____",
-      "name": "Docker容器化技术",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_01____ECS___"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/02.Docker容器化技术.md",
-      "outcome": "读完并整理《Docker容器化技术》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/02.Docker容器化技术.md"
-    },
-    {
-      "id": "docker_03_Dockerfile____",
-      "name": "Dockerfile构建镜像",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_02_Docker_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/03.Dockerfile构建镜像.md",
-      "outcome": "读完并整理《Dockerfile构建镜像》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/03.Dockerfile构建镜像.md"
-    },
-    {
-      "id": "docker_04_Docker_Compose____",
-      "name": "Docker Compose容器编排",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_03_Dockerfile____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/04.Docker Compose容器编排.md",
-      "outcome": "读完并整理《Docker Compose容器编排》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/04.Docker Compose容器编排.md"
-    },
-    {
-      "id": "docker_05_Dify_RAGFlow__",
-      "name": "Dify与RAGFlow部署",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_04_Docker_Compose____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/05.Dify与RAGFlow部署.md",
-      "outcome": "读完并整理《Dify与RAGFlow部署》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/05.Dify与RAGFlow部署.md"
-    },
-    {
-      "id": "docker_06_Docker_____",
-      "name": "Docker命令速查表",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_05_Dify_RAGFlow__"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/06.Docker命令速查表.md",
-      "outcome": "读完并整理《Docker命令速查表》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/06.Docker命令速查表.md"
-    },
-    {
-      "id": "docker_Docker_____",
-      "name": "Docker笔记关系图",
-      "branch": "b6",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "docker_06_Docker_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/docker/Docker笔记关系图.md",
-      "outcome": "读完并整理《Docker笔记关系图》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/docker/Docker笔记关系图.md"
-    },
-    {
-      "id": "n_________00-____",
-      "name": "Qwen3-8B 微调实战课件",
-      "branch": "b7",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/00-课程主页.md",
-      "outcome": "读完并整理《Qwen3-8B 微调实战课件》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/大模型微调课件/00-课程主页.md"
-    },
-    {
-      "id": "n_________01-_________",
+      "id": "finetune_llm",
       "name": "大模型微调技术全景",
-      "branch": "b7",
-      "stage": 1,
+      "branch": "pretrain",
+      "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "n_________00-____"
-      ],
+      "prereqIds": ["bert", "pytorch"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/01-大模型微调技术全景.md",
-      "outcome": "读完并整理《大模型微调技术全景》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "全参数微调与参数高效微调（LoRA 等）、数据构建与训练流程。",
+      "outcome": "说明在什么情况下选择微调而非提示词工程。",
+      "caution": "微调成本高，很多需求用提示词就能解决。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/大模型微调课件/01-大模型微调技术全景.md"
     },
     {
-      "id": "n_________02-_________",
-      "name": "项目背景与环境配置",
-      "branch": "b7",
-      "stage": 1,
+      "id": "finetune_data",
+      "name": "微调数据构建",
+      "branch": "pretrain",
+      "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "n_________01-_________"
-      ],
+      "prereqIds": ["finetune_llm"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/02-项目背景与环境配置.md",
-      "outcome": "读完并整理《项目背景与环境配置》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/大模型微调课件/02-项目背景与环境配置.md"
-    },
-    {
-      "id": "n_________03-____",
-      "name": "数据处理",
-      "branch": "b7",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_________02-_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/03-数据处理.md",
-      "outcome": "读完并整理《数据处理》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "指令数据的格式、质量把控、数据清洗与划分。",
+      "outcome": "产出一份可用于微调的高质量数据集，并说明筛选标准。",
+      "caution": "数据质量比数据量更决定微调效果。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/大模型微调课件/03-数据处理.md"
     },
     {
-      "id": "n_________04-____",
-      "name": "模型训练",
-      "branch": "b7",
-      "stage": 1,
+      "id": "finetune_train",
+      "name": "微调训练与部署",
+      "branch": "pretrain",
+      "stage": 2,
       "kind": "core",
-      "prereqIds": [
-        "n_________03-____"
-      ],
+      "prereqIds": ["finetune_data"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/04-模型训练.md",
-      "outcome": "读完并整理《模型训练》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "训练过程监控、显存管理、模型合并、推理部署与效果评估。",
+      "outcome": "完成一次端到端微调并给出训练前后的对比评估。",
+      "caution": "训练损失下降不代表实际效果变好。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/大模型微调课件/04-模型训练.md"
     },
     {
-      "id": "n_________05-_______",
-      "name": "模型部署与推理",
-      "branch": "b7",
-      "stage": 1,
+      "id": "prompt_basic",
+      "name": "提示词工程基础",
+      "branch": "prompt",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_________04-____"
-      ],
+      "prereqIds": ["bert"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/大模型微调课件/05-模型部署与推理.md",
-      "outcome": "读完并整理《模型部署与推理》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/大模型微调课件/05-模型部署与推理.md"
-    },
-    {
-      "id": "n_______1_1______",
-      "name": "大模型发展史",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n______________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/1.1大模型发展史.md",
-      "outcome": "读完并整理《大模型发展史》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/1.1大模型发展史.md"
-    },
-    {
-      "id": "n_______1_2_______",
-      "name": "大模型开发技术",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______1_1______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/1.2大模型开发技术.md",
-      "outcome": "读完并整理《大模型开发技术》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/1.2大模型开发技术.md"
-    },
-    {
-      "id": "n_______2_1__________",
-      "name": "大模型提示词工程基础",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______1_2_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/2.1大模型提示词工程基础.md",
-      "outcome": "读完并整理《大模型提示词工程基础》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "角色设定、指令清晰化、示例引导与输出格式约束。",
+      "outcome": "为同一任务写出三个提示版本，并对比输出的稳定性。",
+      "caution": "提示有效不等于可复现，需固定模型与参数。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/提示词工程/2.1大模型提示词工程基础.md"
     },
     {
-      "id": "n_______2_2__________",
-      "name": "大模型提示词工程进阶",
-      "branch": "b8",
-      "stage": 1,
+      "id": "cot",
+      "name": "思维链 CoT",
+      "branch": "prompt",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_______2_1__________"
-      ],
+      "prereqIds": ["prompt_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/2.2大模型提示词工程进阶.md",
-      "outcome": "读完并整理《大模型提示词工程进阶》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/2.2大模型提示词工程进阶.md"
-    },
-    {
-      "id": "n_______3_1__Prompt_________",
-      "name": "1基于Prompt工程的金融行业项目",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______2_2__________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/3.1基于Prompt工程的金融行业项目.md",
-      "outcome": "读完并整理《1基于Prompt工程的金融行业项目》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/3.1基于Prompt工程的金融行业项目.md"
-    },
-    {
-      "id": "n_______________Chain-of-Thought__CoT__",
-      "name": "什么是思维链 (Chain-of-Thought, CoT)？",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______3_1__Prompt_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/什么是思维链 (Chain-of-Thought, CoT)？.md",
-      "outcome": "读完并整理《什么是思维链 (Chain-of-Thought, CoT)？》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "逐步推理提示、自洽性、以及何时 CoT 反而不如直接回答。",
+      "outcome": "在推理类任务上对比 CoT 与直接回答的准确率差异。",
+      "caution": "简单任务上 CoT 可能降低效果。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/提示词工程/什么是思维链 (Chain-of-Thought, CoT)？.md"
     },
     {
-      "id": "n_________apikey__",
-      "name": "优化API Key方式",
-      "branch": "b8",
-      "stage": 1,
+      "id": "prompt_advanced",
+      "name": "提示词工程进阶",
+      "branch": "prompt",
+      "stage": 3,
       "kind": "core",
-      "prereqIds": [
-        "n_______________Chain-of-Thought__CoT__"
-      ],
+      "prereqIds": ["cot"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/优化apikey方式.md",
-      "outcome": "读完并整理《优化API Key方式》的关键结论与疑问。",
+      "description": "复杂任务拆解、多轮对话管理、上下文控制与提示模板化。",
+      "outcome": "为一个真实业务场景设计可复用的提示模板。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/优化apikey方式.md"
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/提示词工程/2.2大模型提示词工程进阶.md"
     },
     {
-      "id": "n_______________flowchart",
-      "name": "提示词工程流程.flowchart",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_________apikey__"
-      ],
+      "id": "llm_dev",
+      "name": "大模型开发技术概览",
+      "branch": "prompt",
+      "stage": 3,
+      "kind": "optional",
+      "prereqIds": ["prompt_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/提示词工程流程.flowchart.md",
-      "outcome": "读完并整理《提示词工程流程.flowchart》的关键结论与疑问。",
+      "description": "模型选型、API 调用方式、成本与延迟的权衡。",
+      "outcome": "给出一份模型选型对比表，含成本、延迟与能力边界。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/提示词工程流程.flowchart.md"
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/提示词工程/1.2大模型开发技术.md"
     },
     {
-      "id": "n________________",
-      "name": "提示词工程知识体系",
-      "branch": "b8",
-      "stage": 1,
+      "id": "coze",
+      "name": "Coze 平台与智能体搭建",
+      "branch": "agent",
+      "stage": 4,
       "kind": "core",
-      "prereqIds": [
-        "n_______________flowchart"
-      ],
+      "prereqIds": ["prompt_advanced"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/提示词工程知识体系.md",
-      "outcome": "读完并整理《提示词工程知识体系》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/提示词工程知识体系.md"
-    },
-    {
-      "id": "n______________",
-      "name": "提示词步骤总结",
-      "branch": "b8",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/提示词工程/提示词步骤总结.md",
-      "outcome": "读完并整理《提示词步骤总结》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/提示词工程/提示词步骤总结.md"
-    },
-    {
-      "id": "n_______06-BERT________________",
-      "name": "BERT模型、大语言模型微调与微调数据集",
-      "branch": "b9",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "NLP_excalidraw"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/06-BERT模型、大语言模型微调与微调数据集.md",
-      "outcome": "读完并整理《BERT模型、大语言模型微调与微调数据集》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/06-BERT模型、大语言模型微调与微调数据集.md"
-    },
-    {
-      "id": "n_______07-Dify_RAG_____",
-      "name": "Dify知识库详解 - RAG知识库原理与实战",
-      "branch": "b9",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______06-BERT________________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/07-Dify RAG知识库详解.md",
-      "outcome": "读完并整理《Dify知识库详解 - RAG知识库原理与实战》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/07-Dify RAG知识库详解.md"
-    },
-    {
-      "id": "n_______08-RAGFlow____",
-      "name": "RAGFlow配置原理",
-      "branch": "b9",
-      "stage": 1,
-      "kind": "core",
-      "prereqIds": [
-        "n_______07-Dify_RAG_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/08-RAGFlow配置原理.md",
-      "outcome": "读完并整理《RAGFlow配置原理》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/08-RAGFlow配置原理.md"
-    },
-    {
-      "id": "n_______coze_1_1_Coze____",
-      "name": "1 Coze平台介绍",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______06-BERT________________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/1.1 Coze平台介绍.md",
-      "outcome": "读完并整理《1 Coze平台介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/1.1 Coze平台介绍.md"
-    },
-    {
-      "id": "n_______coze_1_2_Coze______",
-      "name": "2 Coze平台入门实战",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_1_1_Coze____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/1.2 Coze平台入门实战.md",
-      "outcome": "读完并整理《2 Coze平台入门实战》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "低代码搭建智能体：插件、工作流、知识库与多智能体协作。",
+      "outcome": "在平台上独立搭建一个可用的智能体并说明其编排逻辑。",
+      "caution": "低代码平台能快速验证想法，但深度定制受限。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/coze/1.2 Coze平台入门实战.md"
     },
     {
-      "id": "n_______coze_2_1_______",
-      "name": "1 私有数据访问",
-      "branch": "b9",
-      "stage": 2,
+      "id": "multi_agent",
+      "name": "Multi-Agent 多智能体",
+      "branch": "agent",
+      "stage": 4,
       "kind": "core",
-      "prereqIds": [
-        "n_______coze_1_2_Coze______"
-      ],
+      "prereqIds": ["coze"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/2.1 私有数据访问.md",
-      "outcome": "读完并整理《1 私有数据访问》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/2.1 私有数据访问.md"
-    },
-    {
-      "id": "n_______coze_2_2_________",
-      "name": "2 多模态和循环结构",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_2_1_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/2.2 多模态和循环结构.md",
-      "outcome": "读完并整理《2 多模态和循环结构》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/2.2 多模态和循环结构.md"
-    },
-    {
-      "id": "n_______coze_2_3_Multi-Agent____",
-      "name": "3 Multi-Agent多智能体",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_2_2_________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/2.3 Multi-Agent多智能体.md",
-      "outcome": "读完并整理《3 Multi-Agent多智能体》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "角色分工、任务分发、协作与冲突处理的组织方式。",
+      "outcome": "设计一个双智能体协作方案，说明分工依据与失败兜底。",
+      "caution": "多智能体增加复杂度，单智能体够用时不必强行拆分。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/coze/2.3 Multi-Agent多智能体.md"
     },
     {
-      "id": "n_______coze_3_1_____",
-      "name": "1 项目介绍",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_2_3_Multi-Agent____"
-      ],
+      "id": "agent_project",
+      "name": "实战：智能体项目编排",
+      "branch": "agent",
+      "stage": 4,
+      "kind": "milestone",
+      "prereqIds": ["multi_agent"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.1 项目介绍.md",
-      "outcome": "读完并整理《1 项目介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.1 项目介绍.md"
-    },
-    {
-      "id": "n_______coze_3_2_______",
-      "name": "2 简历评估模块",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_1_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.2 简历评估模块.md",
-      "outcome": "读完并整理《2 简历评估模块》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.2 简历评估模块.md"
-    },
-    {
-      "id": "n_______coze_3_3_______",
-      "name": "3 录音分析模块",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_2_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.3 录音分析模块.md",
-      "outcome": "读完并整理《3 录音分析模块》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.3 录音分析模块.md"
-    },
-    {
-      "id": "n_______coze_3_4________",
-      "name": "4 面试题生成模块",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_3_______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.4 面试题生成模块.md",
-      "outcome": "读完并整理《4 面试题生成模块》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.4 面试题生成模块.md"
-    },
-    {
-      "id": "n_______coze_3_5______",
-      "name": "5 智能体编排",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_4________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.5 智能体编排.md",
-      "outcome": "读完并整理《5 智能体编排》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "完整项目的模块划分、编排流程、调试与上线。",
+      "outcome": "交付一个可演示的智能体项目，含编排图与失败处理说明。",
+      "caution": "演示成功不等于稳定，需说明适用边界。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/coze/3.5 智能体编排.md"
     },
     {
-      "id": "n_______coze_3_6_API____",
-      "name": "6 API调用方式",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_5______"
-      ],
+      "id": "langgraph",
+      "name": "LangGraph 状态机【待学习】",
+      "branch": "agent",
+      "stage": 4,
+      "kind": "optional",
+      "prereqIds": ["multi_agent"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/3.6 API调用方式.md",
-      "outcome": "读完并整理《6 API调用方式》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.6 API调用方式.md"
+      "description": "用状态机编排 Agent 流程：节点、边、条件分支与状态持久化。",
+      "outcome": "用 LangGraph 实现一个带条件分支与重试的最小可运行流程。",
+      "caution": "此节点已有笔记但内容较简，建议补充实现练习。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/LangGraph/状态机.md"
     },
     {
-      "id": "n_______coze_4_1_____",
-      "name": "1 案例说明",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_3_6_API____"
-      ],
+      "id": "langchain",
+      "name": "LangChain 核心抽象【待学习】",
+      "branch": "agent",
+      "stage": 4,
+      "kind": "optional",
+      "prereqIds": ["multi_agent", "pytorch"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.1 案例说明.md",
-      "outcome": "读完并整理《1 案例说明》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.1 案例说明.md"
+      "description": "模型封装、提示模板、输出解析、链式组合与工具调用。",
+      "outcome": "用 LangChain 拼出一个可运行的问答链，并说明每层封装的作用。",
+      "caution": "框架抽象随版本变化快，先掌握底层调用再依赖封装。",
+      "sourceIds": ["design"]
     },
     {
-      "id": "n_______coze_4_2________",
-      "name": "2 智能问答小助手",
-      "branch": "b9",
-      "stage": 2,
+      "id": "dify",
+      "name": "Dify 平台与工作流",
+      "branch": "rag",
+      "stage": 5,
       "kind": "core",
-      "prereqIds": [
-        "n_______coze_4_1_____"
-      ],
+      "prereqIds": ["coze"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.2 智能问答小助手.md",
-      "outcome": "读完并整理《2 智能问答小助手》的关键结论与疑问。",
+      "description": "开源 LLM 应用平台的部署、知识库接入与工作流编排。",
+      "outcome": "本地部署 Dify 并跑通一个带知识库的问答应用。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.2 智能问答小助手.md"
-    },
-    {
-      "id": "n_______coze_4_3________",
-      "name": "3 旅游规划小精灵",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_4_2________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.3 旅游规划小精灵.md",
-      "outcome": "读完并整理《3 旅游规划小精灵》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.3 旅游规划小精灵.md"
-    },
-    {
-      "id": "n_______coze_4_4______",
-      "name": "4 智能面试官",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_4_3________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.4 智能面试官.md",
-      "outcome": "读完并整理《4 智能面试官》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.4 智能面试官.md"
-    },
-    {
-      "id": "n_______coze_4_5_AI____",
-      "name": "5 AI智慧助教",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_4_4______"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.5 AI智慧助教.md",
-      "outcome": "读完并整理《5 AI智慧助教》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.5 AI智慧助教.md"
-    },
-    {
-      "id": "n_______coze_4_6_________",
-      "name": "6 英语口语陪练专家",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______coze_4_5_AI____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/coze/4.6 英语口语陪练专家.md",
-      "outcome": "读完并整理《6 英语口语陪练专家》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/4.6 英语口语陪练专家.md"
-    },
-    {
-      "id": "n_______dify_07-Dify_RAG_____",
-      "name": "Dify RAG知识库详解",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______06-BERT________________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/07-Dify RAG知识库详解.md",
-      "outcome": "读完并整理《Dify RAG知识库详解》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/07-Dify RAG知识库详解.md"
-    },
-    {
-      "id": "n_______dify_1_1_Dify____",
-      "name": "1 Dify平台介绍",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______dify_07-Dify_RAG_____"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/1.1 Dify平台介绍.md",
-      "outcome": "读完并整理《1 Dify平台介绍》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/dify/1.1 Dify平台介绍.md"
     },
     {
-      "id": "n_______dify_1_2_Dify______-___________",
-      "name": "Dify平台入门实战-大语言模型微调语料构建",
-      "branch": "b9",
-      "stage": 2,
+      "id": "rag_basic",
+      "name": "RAG 与知识库",
+      "branch": "rag",
+      "stage": 5,
       "kind": "core",
-      "prereqIds": [
-        "n_______dify_1_1_Dify____"
-      ],
+      "prereqIds": ["dify"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/1.2 Dify平台入门实战-大语言模型微调语料构建.md",
-      "outcome": "读完并整理《Dify平台入门实战-大语言模型微调语料构建》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/1.2 Dify平台入门实战-大语言模型微调语料构建.md"
-    },
-    {
-      "id": "n_______dify_2_2_RAG____",
-      "name": "2 RAG和知识库",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______dify_1_2_Dify______-___________"
-      ],
-      "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/2.2 RAG和知识库.md",
-      "outcome": "读完并整理《2 RAG和知识库》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "description": "文档切分、向量化、相似度检索、上下文拼装与来源引用。",
+      "outcome": "搭一个能回答自有文档的 RAG，并给出检索命中率。",
+      "caution": "回答错误常常来自检索而非生成，需分开诊断。",
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/dify/2.2 RAG和知识库.md"
     },
     {
-      "id": "n_______dify_2_3_Dify_______",
-      "name": "3 Dify接入外部知识库",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______dify_2_2_RAG____"
-      ],
+      "id": "rag_external",
+      "name": "外部知识库接入",
+      "branch": "rag",
+      "stage": 5,
+      "kind": "optional",
+      "prereqIds": ["rag_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/2.3 Dify接入外部知识库.md",
-      "outcome": "读完并整理《3 Dify接入外部知识库》的关键结论与疑问。",
+      "description": "接入外部向量库或企业知识源，处理权限与更新同步。",
+      "outcome": "说明外部知识库方案中数据更新与权限控制的处理方式。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/dify/2.3 Dify接入外部知识库.md"
     },
     {
-      "id": "n_______dify_3_1_______",
-      "name": "1 智能法律助手",
-      "branch": "b9",
-      "stage": 2,
-      "kind": "core",
-      "prereqIds": [
-        "n_______dify_2_3_Dify_______"
-      ],
+      "id": "ragflow",
+      "name": "RAGFlow 配置原理",
+      "branch": "rag",
+      "stage": 5,
+      "kind": "optional",
+      "prereqIds": ["rag_basic"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/智能体开发/dify/3.1 智能法律助手.md",
-      "outcome": "读完并整理《1 智能法律助手》的关键结论与疑问。",
+      "description": "深度文档理解的 RAG 引擎：解析、分块策略与检索优化。",
+      "outcome": "对比 RAGFlow 与基础向量检索在复杂文档上的效果差异。",
+      "caution": "可作为 RAG 方案选型的备选，不必与 Dify 同时深入。",
+      "sourceIds": ["notes"],
+      "obsidianNote": "06-AI大模型/智能体开发/08-RAGFlow配置原理.md"
+    },
+    {
+      "id": "rag_project",
+      "name": "实战：RAG 应用落地",
+      "branch": "rag",
+      "stage": 5,
+      "kind": "milestone",
+      "prereqIds": ["rag_basic"],
+      "relatedIds": [],
+      "description": "从需求到上线的完整 RAG 项目：数据处理、检索优化、评估与迭代。",
+      "outcome": "交付一个可演示的 RAG 应用，含检索命中率与失败分析。",
       "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
+      "sourceIds": ["notes"],
       "obsidianNote": "06-AI大模型/智能体开发/dify/3.1 智能法律助手.md"
     },
     {
-      "id": "n____",
-      "name": "未命名",
-      "branch": "b5",
-      "stage": 0,
+      "id": "rag_eval_todo",
+      "name": "RAG 评估体系【待学习】",
+      "branch": "rag",
+      "stage": 5,
       "kind": "core",
-      "prereqIds": [
-        "ai____"
-      ],
+      "prereqIds": ["rag_project"],
       "relatedIds": [],
-      "description": "Obsidian 笔记：06-AI大模型/未命名.md",
-      "outcome": "读完并整理《未命名》的关键结论与疑问。",
-      "caution": "",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": "06-AI大模型/未命名.md"
+      "description": "构建评估集、检索与生成的分离评估、回归检测与失败分类。",
+      "outcome": "沉淀一个小型评估集，并在改动前后给出可对比的结论。",
+      "caution": "没有评估体系的 RAG 优化只能靠感觉。",
+      "sourceIds": ["design"]
     },
     {
-      "id": "finish",
-      "name": "知识收束与复盘",
-      "branch": "b0",
-      "stage": 3,
+      "id": "ai_finish",
+      "name": "收束：可复现的 AI 应用",
+      "branch": "rag",
+      "stage": 5,
       "kind": "milestone",
-      "prereqIds": [
-        "n_01-_____2_________2_jupyter_notebook___",
-        "n_01-_____5_1Seaborn_2_1____________",
-        "n_01-______________",
-        "n_02-_____6______6_2_______",
-        "n_02-____________excalidraw",
-        "n_03-___________-mindmap",
-        "LangGraph____",
-        "NLP_1__________1_________",
-        "NLP_2_______7_jieba_____",
-        "NLP_3_RNN_____8RNN__seq2seq___",
-        "NLP_4_Transformer________",
-        "NLP_5______9NLP_____________",
-        "NLP_6_Bert_____6_BERT_GPT_ELMo_____",
-        "NLP_7_Transformer___________5_Transformer__",
-        "docker_Docker_____",
-        "n_________05-_______",
-        "n________________",
-        "n_______08-RAGFlow____",
-        "n_______coze_4_6_________",
-        "n_______dify_3_1_______",
-        "n____"
-      ],
+      "prereqIds": ["agent_project", "rag_project", "rag_eval_todo", "finetune_train"],
       "relatedIds": [],
-      "description": "所有分支的末端汇入此处，用于整体复盘。",
-      "outcome": "写一页总结：已掌握的主题、仍存疑的问题、下一步方向。",
-      "caution": "这是浏览结构上的收束点，不代表学会了全部内容。",
-      "sourceIds": [
-        "obsidian"
-      ],
-      "obsidianNote": ""
+      "description": "把 Agent、RAG 与微调经验整合成一个完整、可复现、可评估的应用。",
+      "outcome": "交付含代码、数据说明、评估记录与局限声明的作品条目。",
+      "caution": "不可复现的结果在技术评审中价值有限。",
+      "sourceIds": ["design"]
     }
   ],
-  "applicationEdges": []
+  "applicationEdges": [
+    {
+      "source": "self_attention",
+      "target": "transformer_code",
+      "relation": "development",
+      "reason": "精讲中的实现细节可直接用于逐模块编码。"
+    },
+    {
+      "source": "transformer_code",
+      "target": "finetune_llm",
+      "relation": "development",
+      "reason": "亲手实现过 Transformer，才能理解微调时改动的具体参数。"
+    },
+    {
+      "source": "self_attention",
+      "target": "bert",
+      "relation": "application",
+      "reason": "自注意力精讲是理解 BERT 双向编码行为的基础。"
+    },
+    {
+      "source": "text_preprocess",
+      "target": "rag_basic",
+      "relation": "application",
+      "reason": "文本切分与表示的基本功，在 RAG 的文档处理环节仍然适用。"
+    },
+    {
+      "source": "llm_dev",
+      "target": "rag_basic",
+      "relation": "development",
+      "reason": "模型选型与成本权衡是搭建 RAG 应用的前置判断。"
+    },
+    {
+      "source": "langgraph",
+      "target": "rag_project",
+      "relation": "application",
+      "reason": "若用 LangGraph 编排，可把 RAG 检索作为状态机中的一个节点。"
+    },
+    {
+      "source": "langchain",
+      "target": "rag_project",
+      "relation": "application",
+      "reason": "LangChain 的检索链可直接用于 RAG 应用的检索环节。"
+    },
+    {
+      "source": "rag_external",
+      "target": "rag_project",
+      "relation": "application",
+      "reason": "外部知识库接入方案可在项目需要多数据源时采用。"
+    },
+    {
+      "source": "ragflow",
+      "target": "rag_project",
+      "relation": "application",
+      "reason": "RAGFlow 可作为复杂文档场景下的检索方案备选。"
+    }
+  ]
 }

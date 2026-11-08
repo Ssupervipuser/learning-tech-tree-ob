@@ -8,6 +8,12 @@ const obsidianUri=(notePath,vault)=>{const p=String(notePath||'').replaceAll('\\
  if(!p)return '';const clean=p.replace(/^\/+/,'');if(!clean)return '';
  return vault?('obsidian://open?vault='+encodeURIComponent(vault)+'&file='+encodeURIComponent(clean))
             :('obsidian://open?file='+encodeURIComponent(clean));};
+// 待学节点（尚未建立笔记）可通过 obsidian://new 一键创建。
+const obsidianNewUri=(notePath,vault,title)=>{const p=String(notePath||'').replaceAll('\\','/');
+ if(!p)return '';const clean=p.replace(/^\/+/,'');if(!clean)return '';
+ const body='# '+String(title||'').trim()+'\n\n';
+ return 'obsidian://new?'+(vault?('vault='+encodeURIComponent(vault)+'&'):'')
+   +'file='+encodeURIComponent(clean)+'&content='+encodeURIComponent(body);};
 const $=id=>document.getElementById(id), nodes=DATA.nodes, byId=new Map(nodes.map(n=>[n.id,n]));
 const branches=DATA.branches, stages=DATA.stages, sources=new Map(DATA.sources.map(s=>[s.id,s]));
 const applicationEdges=DATA.applicationEdges||[],allEdges=[...nodes.flatMap(n=>n.prereqIds.map(source=>({source,target:n.id,relation:'prerequisite'}))),...applicationEdges];
@@ -104,11 +110,26 @@ function renderDetail(){const host=$('detailBody');host.replaceChildren();if(!se
  function routeList(title,edges,inbound){if(!edges.length)return;host.append(el('h3','',title));for(const e of edges){depList(host,[inbound?e.source:e.target]);host.append(el('div','source-scope',e.reason));}}
  routeList('从哪里发展 / 汇入 · 虚线，非硬门槛',priorRoutes,true);
  routeList('用于什么 / 成果去向 · 虚线，非硬门槛',nextRoutes,false);
+ // Obsidian 笔记：已有笔记 -> 打开；待学节点 -> 一键创建
  const obsNote=n.obsidianNote||'',obsUri=obsidianUri(obsNote,DATA.obsidianVault);
- if(obsNote){host.append(el('h3','','Obsidian 笔记'));
+ const isTodo=/【待学习】/.test(n.name)||!!n.obsidianTodo;
+ if(isTodo){
+  const target=obsNote||(DATA.obsidianNoteRoot?DATA.obsidianNoteRoot+'/'+n.name.replace(/【待学习】/g,'').trim()+'.md':'');
+  host.append(el('h3','','待学习 · 尚无笔记'));
+  if(target){
+   const a=el('a','jump-card todo-create','创建笔记并打开 ↗');a.href=obsidianNewUri(target,DATA.obsidianVault,n.name.replace(/【待学习】/g,'').trim());a.rel='noopener';
+   a.title='将在 '+target+' 创建笔记';host.append(a);
+   host.append(el('div','source-scope','将创建：'+target));
+  }else if(DATA.obsidianVault){
+   host.append(el('div','caution','该树未配置 obsidianNoteRoot，无法推断笔记路径。'));
+  }
+  if(obsNote)host.append(el('div','source-scope','已有笔记：'+obsNote));
+ }else if(obsNote){
+  host.append(el('h3','','Obsidian 笔记'));
   if(obsUri){const a=el('a','jump-card','在 Obsidian 中打开 ↗');a.href=obsUri;a.rel='noopener';a.title=obsNote;host.append(a);}
   else host.append(el('div','source-scope','该节点未配置笔记路径。'));
-  host.append(el('div','source-scope',obsNote));}
+  host.append(el('div','source-scope',obsNote));
+ }
  const journey=el('button','jump-card','查看起点 → 本节点 → 目标终点');journey.onclick=showJourney;host.append(journey);
  if(n.relatedIds.length){host.append(el('h3','','建议背景 · 不参与解锁'));depList(host,n.relatedIds);}
  const children=nodes.filter(x=>x.prereqIds.includes(n.id));if(children.length){host.append(el('h3','',`直接解锁 · ${children.length} 项`));depList(host,children.map(c=>c.id));}

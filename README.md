@@ -12,12 +12,19 @@
 2. 点击任意节点查看详情
 3. 点「在 Obsidian 中打开 ↗」直接跳到对应笔记
 
-当前内置两棵示例树，都来自本机 Obsidian vault：
+当前内置两棵**学习路线图**，节点指向本机 Obsidian vault 中的笔记：
 
-| 树 | 节点数 | 来源文件夹 |
-|---|---|---|
-| `ai-llm` | 138 | `06-AI大模型` |
-| `cv-basics` | 17 | `CV基础` |
+| 树 | 节点数 | 覆盖内容 | 待学节点 |
+|---|---|---|---|
+| `cv-roadmap` | 25 | CNN 基础 → 分类骨干 → 训练 → 目标检测 | 分割、ViT、部署 |
+| `ai-roadmap` | 31 | Transformer → 预训练/微调 → 提示词 → Agent → RAG | LangChain、RAG 评估 |
+
+**两种节点**：
+
+- **已有笔记** → 点「在 Obsidian 中打开 ↗」直接跳转
+- **待学习**（标记 `【待学习】`）→ 点「创建笔记并打开 ↗」，在 vault 里建好空白笔记并打开
+
+路线图是人工编排的，不是从目录自动抓取，所以只包含过滤后的高质量笔记，不含 `未命名`、空笔记、Excalidraw 等噪音。
 
 ## 从 Obsidian 生成一棵新树
 
@@ -31,13 +38,11 @@ node scripts/obsidian-import.mjs <vault路径> <要导入的文件夹> <输出js
 node scripts/obsidian-import.mjs "C:\ob" "CV基础" "data/cv.json" "ob" "cv-basics"
 ```
 
-生成规则：
+这个脚本按目录自动生成（分支=子目录，节点=笔记），适合快速看全貌。**若要做严格的学习路线图，建议手写 JSON**，因为自动生成的先修关系只是文件顺序，没有教学意义。
 
-- **分支** = 顶层子目录，每个目录一条轨道，自动配色
-- **阶段** = 笔记层级深度，固定四级：入门 / 基础 / 进阶 / 实战
-- **节点** = 每篇 `.md`，名称优先取 frontmatter 的 `title`，否则用文件名（去掉 `01-` 前缀）
-- **连线** = 同一目录内按文件名顺序串成链，`00-overview` / `课程介绍` / `总结` 优先作入口
-- 子目录入口挂到父目录入口下，所有末端汇入「知识收束与复盘」终点
+## 处理 vault 噪音
+
+自动生成时建议排除：空笔记（<200 字符）、名称含「未命名」、`.excalidraw.md` / `.canvas` / `.xmind`、资料库目录（`raw`、`others`、`templates`、`项目*`）、隐藏目录。
 
 然后用浏览器打开生成的 JSON 预览，或直接构建成独立页面。
 
@@ -48,7 +53,7 @@ node scripts/obsidian-import.mjs "C:\ob" "CV基础" "data/cv.json" "ob" "cv-basi
 node scripts/build.mjs
 
 # 指定哪棵树作为首页
-node scripts/build.mjs --main=ai-llm
+node scripts/build.mjs --main=ai-roadmap
 
 # 只构建单个定义
 node scripts/build.mjs data/xx.json examples/xx.html
@@ -105,7 +110,7 @@ obsidian://open?vault=<vault名>&file=<编码后的笔记路径>
 
 ```
 repo/
-├── index.html                 主树页面（默认 ai-llm）
+├── index.html                 主树页面（默认 cv-roadmap）
 ├── data/                      树的定义 JSON
 ├── examples/                  生成的独立页面
 ├── src/                       查看器源码与图引擎
