@@ -1,18 +1,33 @@
 # Learning Tech Tree · Obsidian 知识树
 
-把 Obsidian 笔记变成一张可缩放、可追溯的**阶段科技树**：用树看全局结构和学习顺序，用 Obsidian 记详细笔记，两边通过 `obsidian://` 协议一键跳转。
+把 Obsidian 笔记变成一张可追溯的**学习路线图**。两种使用方式：
 
-- 纯静态，无后端、无账号、无需 API key
-- 打开 HTML 即可用，笔记数据不离开本机
+- **Obsidian 插件**（推荐）：在 Obsidian 内看树、点节点跳笔记、打勾记进度，无需浏览器
+- **网页版**：双击 HTML 即可用，通过 `obsidian://` 协议跳转
+
+- 纯本地，无后端、无账号、无需 API key
+- 数据就是一个 JSON 文件，进度跟着 vault 走
 - MIT 许可
 
 ## 快速开始
 
-1. 双击 `index.html`（或 `examples/ai.html`、`examples/cv.html`）
-2. 点击任意节点查看详情
-3. 点「在 Obsidian 中打开 ↗」直接跳到对应笔记
+### 方式一：Obsidian 插件
 
-当前内置两棵**学习路线图**，节点指向本机 Obsidian vault 中的笔记：
+插件已安装在 `.obsidian/plugins/learning-tech-tree/`，在 Obsidian 设置中启用后：
+
+- 点左侧栏的「网络」图标，或 `Ctrl+P` 搜索「学习路线图」
+- 点击节点查看详情，「＋ 自评已掌握」记录进度
+- 「打开笔记 ↗」直接跳转到对应笔记
+
+详见 [插件说明](docs/obsidian-plugin.md)。
+
+### 方式二：网页版
+
+双击 `index.html`（或 `examples/ai.html`、`examples/cv.html`）。
+
+> 首次点击「在 Obsidian 中打开」时，浏览器会弹授权框，**必须点「允许」**，之后才永久生效。
+
+当前内置两棵**学习路线图**：
 
 | 树 | 节点数 | 覆盖内容 | 待学节点 |
 |---|---|---|---|
@@ -21,8 +36,8 @@
 
 **两种节点**：
 
-- **已有笔记** → 点「在 Obsidian 中打开 ↗」直接跳转
-- **待学习**（标记 `【待学习】`）→ 点「创建笔记并打开 ↗」，在 vault 里建好空白笔记并打开
+- **已有笔记** → 打开对应笔记
+- **待学习**（标记 `【待学习】`）→ 一键创建空白笔记并打开
 
 路线图是人工编排的，不是从目录自动抓取，所以只包含过滤后的高质量笔记，不含 `未命名`、空笔记、Excalidraw 等噪音。
 
@@ -38,13 +53,13 @@ node scripts/obsidian-import.mjs <vault路径> <要导入的文件夹> <输出js
 node scripts/obsidian-import.mjs "C:\ob" "CV基础" "data/cv.json" "ob" "cv-basics"
 ```
 
-这个脚本按目录自动生成（分支=子目录，节点=笔记），适合快速看全貌。**若要做严格的学习路线图，建议手写 JSON**，因为自动生成的先修关系只是文件顺序，没有教学意义。
+按目录自动生成（分支=子目录，节点=笔记），适合快速看全貌。**若要做严格的学习路线图，建议手写 JSON**——自动生成的先修关系只是文件顺序，没有教学意义。
+
+生成的 JSON 放进 vault 的 `学习路线图/` 目录后，插件会自动加载。
 
 ## 处理 vault 噪音
 
 自动生成时建议排除：空笔记（<200 字符）、名称含「未命名」、`.excalidraw.md` / `.canvas` / `.xmind`、资料库目录（`raw`、`others`、`templates`、`项目*`）、隐藏目录。
-
-然后用浏览器打开生成的 JSON 预览，或直接构建成独立页面。
 
 ## 构建
 
@@ -102,18 +117,30 @@ obsidian://open?vault=<vault名>&file=<编码后的笔记路径>
 
 ## 进度与笔记
 
-- 在节点上点「自评已掌握」，进度存在当前浏览器 `localStorage`，按树 ID 隔离
-- 「备份进度」导出 JSON，「恢复进度」读回；换浏览器、换地址、清缓存前请先备份
-- **不自动同步**，也不写回 Obsidian
+两种使用方式的进度存储不同：
+
+| | 插件 | 网页版 |
+|---|---|---|
+| 存储位置 | `.obsidian/plugins/learning-tech-tree/data.json` | 浏览器 `localStorage` |
+| 跟 vault 走 | ✅ 是 | ❌ 否 |
+| 跨设备 | ✅ 备份 vault 即可 | 需手动导出/导入 |
+
+网页版另有「备份进度 / 恢复进度」按钮，插件则直接依赖 `data.json`。
+
+**两者不互通**，也不写回笔记内容。
 
 ## 目录结构
 
 ```
 repo/
 ├── index.html                 主树页面（默认 cv-roadmap）
+├── obsidian-plugin/           Obsidian 插件源码
+│   ├── main.js
+│   ├── manifest.json
+│   └── styles.css
 ├── data/                      树的定义 JSON
 ├── examples/                  生成的独立页面
-├── src/                       查看器源码与图引擎
+├── src/                       网页版查看器源码与图引擎
 ├── scripts/                   导入、构建、校验脚本
 ├── docs/                      格式与定制说明
 ├── schema/tree.schema.json    JSON Schema
@@ -123,15 +150,16 @@ repo/
 
 ## 文档
 
+- [Obsidian 插件](docs/obsidian-plugin.md) —— 安装、使用、数据存放
 - [数据格式](docs/data-format.md) —— 字段含义、ID 规则、边的关系
 - [定制](docs/customization.md) —— 改阶段、分支、配色
-- [Obsidian 集成](docs/obsidian-integration.md) —— 本方案的原理与限制
-- [架构](docs/architecture.md) —— 查看器与图引擎的结构
+- [Obsidian 集成（网页版）](docs/obsidian-integration.md) —— `obsidian://` 原理与限制
+- [架构](docs/architecture.md) —— 网页版查看器与图引擎的结构
 
 ## 限制
 
-- 浏览器内**不能编辑**树，只能改 JSON 后重新构建
-- 用「打开科技树」临时导入的 JSON **刷新就丢**，长期使用请认准生成的独立 HTML
+- **不能在图里编辑结构**，改 JSON 后自动重载（插件）或重新构建（网页版）
+- 网页版用「打开科技树」临时导入的 JSON **刷新就丢**，长期使用请用插件或生成的独立 HTML
 - 界面文案为中文，`language` 字段只影响 `<html lang>`，不做界面翻译
 - 画布节点只支持鼠标操作，键盘可达性有限
 

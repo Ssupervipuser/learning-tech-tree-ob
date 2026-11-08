@@ -1,0 +1,9 @@
+{
+  "id": "learning-tech-tree",
+  "name": "Learning Tech Tree",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "把学习路线图直接放进 Obsidian：侧边栏看树、点节点跳笔记、待学节点一键创建。",
+  "author": "BOB0731",
+  "isDesktopOnly": false
+}
