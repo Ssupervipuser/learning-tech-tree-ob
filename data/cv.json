@@ -1,0 +1,359 @@
+{
+  "format": "learning-tech-tree/v1",
+  "id": "cv-basics",
+  "title": "CV基础 知识树",
+  "subtitle": "由 Obsidian 笔记自动生成 · 点击节点跳转对应笔记",
+  "description": "每个节点对应 vault 中的一篇笔记，点击「在 Obsidian 中打开」可直接跳转。",
+  "version": "0.1.0",
+  "language": "zh-CN",
+  "obsidianVault": "ob",
+  "education": {
+    "path": "self-study",
+    "duration": null,
+    "note": "由笔记目录自动生成的浏览结构，不是课程方案。"
+  },
+  "stages": [
+    "入门",
+    "基础",
+    "进阶",
+    "实战"
+  ],
+  "branches": [
+    {
+      "id": "b0",
+      "label": "01-图像分类",
+      "en": "01-图像分类",
+      "color": "#83b6df"
+    },
+    {
+      "id": "b1",
+      "label": "02-目标检测",
+      "en": "02-目标检测",
+      "color": "#7bd2c4"
+    },
+    {
+      "id": "b2",
+      "label": "CV基础",
+      "en": "CV基础",
+      "color": "#e5b575"
+    }
+  ],
+  "sources": [
+    {
+      "id": "obsidian",
+      "title": "Obsidian vault: ob",
+      "url": "",
+      "scope": "本地笔记，未上传。"
+    }
+  ],
+  "startId": "n_01-_____01-overview",
+  "endId": "finish",
+  "nodes": [
+    {
+      "id": "n_00-____",
+      "name": "计算机视觉",
+      "branch": "b2",
+      "stage": 0,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____01-overview"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/00-课程介绍.md",
+      "outcome": "读完并整理《计算机视觉》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/00-课程介绍.md"
+    },
+    {
+      "id": "n_01-_____01-overview",
+      "name": "1.1 图像分类简介",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "milestone",
+      "prereqIds": [],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/01-overview.md",
+      "outcome": "读完并整理《1.1 图像分类简介》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/01-overview.md"
+    },
+    {
+      "id": "n_01-_____02-AlexNet",
+      "name": "1.2 AlexNet",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____01-overview"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/02-AlexNet.md",
+      "outcome": "读完并整理《1.2 AlexNet》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/02-AlexNet.md"
+    },
+    {
+      "id": "n_01-_____03-VGGNet",
+      "name": "1.3 VGG",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____02-AlexNet"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/03-VGGNet.md",
+      "outcome": "读完并整理《1.3 VGG》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/03-VGGNet.md"
+    },
+    {
+      "id": "n_01-_____04-GoogLeNet",
+      "name": "1.4 GoogLeNet",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____03-VGGNet"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/04-GoogLeNet.md",
+      "outcome": "读完并整理《1.4 GoogLeNet》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/04-GoogLeNet.md"
+    },
+    {
+      "id": "n_01-_____05-ResNet",
+      "name": "1.5 ResNet",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____04-GoogLeNet"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/05-ResNet.md",
+      "outcome": "读完并整理《1.5 ResNet》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/05-ResNet.md"
+    },
+    {
+      "id": "n_01-_____06-____",
+      "name": "1.6 图像增强",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____05-ResNet"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/06-图像增强.md",
+      "outcome": "读完并整理《1.6 图像增强》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/06-图像增强.md"
+    },
+    {
+      "id": "n_01-_____07-____",
+      "name": "1.7 模型微调",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____06-____"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/07-模型微调.md",
+      "outcome": "读完并整理《1.7 模型微调》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/07-模型微调.md"
+    },
+    {
+      "id": "n_01-_____08-________",
+      "name": "1.8 汽车车型分类案例",
+      "branch": "b0",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_01-_____07-____"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/01-图像分类/08-汽车车型分类案例.md",
+      "outcome": "读完并整理《1.8 汽车车型分类案例》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/01-图像分类/08-汽车车型分类案例.md"
+    },
+    {
+      "id": "n_02-_____00-overview",
+      "name": "2.1 目标检测概述",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_00-____"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/00-overview.md",
+      "outcome": "读完并整理《2.1 目标检测概述》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/00-overview.md"
+    },
+    {
+      "id": "n_02-_____01-RCNN",
+      "name": "2.2 R-CNN网络基础",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____00-overview"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/01-RCNN.md",
+      "outcome": "读完并整理《2.2 R-CNN网络基础》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/01-RCNN.md"
+    },
+    {
+      "id": "n_02-_____02-Faster-RCNN",
+      "name": "2.3 Faster-RCNN网络",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____01-RCNN"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/02-Faster-RCNN.md",
+      "outcome": "读完并整理《2.3 Faster-RCNN网络》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/02-Faster-RCNN.md"
+    },
+    {
+      "id": "n_02-_____03-wheat_detection_fasterRCNN",
+      "name": "2.4 麦穗检测案例-FasterRCNN",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____02-Faster-RCNN"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/03-wheat_detection_fasterRCNN.md",
+      "outcome": "读完并整理《2.4 麦穗检测案例-FasterRCNN》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/03-wheat_detection_fasterRCNN.md"
+    },
+    {
+      "id": "n_02-_____04-yolo",
+      "name": "2.5.yolo系列",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____03-wheat_detection_fasterRCNN"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/04-yolo.md",
+      "outcome": "读完并整理《2.5.yolo系列》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/04-yolo.md"
+    },
+    {
+      "id": "n_02-_____05-yoloV4____",
+      "name": "2.6.yoloV4算法详解",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____04-yolo"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/05-yoloV4算法详解.md",
+      "outcome": "读完并整理《2.6.yoloV4算法详解》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/05-yoloV4算法详解.md"
+    },
+    {
+      "id": "n_02-_____06-yoloV5____",
+      "name": "2.7.yoloV5算法详解及案例",
+      "branch": "b1",
+      "stage": 1,
+      "kind": "core",
+      "prereqIds": [
+        "n_02-_____05-yoloV4____"
+      ],
+      "relatedIds": [],
+      "description": "Obsidian 笔记：CV基础/02-目标检测/06-yoloV5算法详解.md",
+      "outcome": "读完并整理《2.7.yoloV5算法详解及案例》的关键结论与疑问。",
+      "caution": "",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": "CV基础/02-目标检测/06-yoloV5算法详解.md"
+    },
+    {
+      "id": "finish",
+      "name": "知识收束与复盘",
+      "branch": "b0",
+      "stage": 3,
+      "kind": "milestone",
+      "prereqIds": [
+        "n_01-_____08-________",
+        "n_02-_____06-yoloV5____"
+      ],
+      "relatedIds": [],
+      "description": "所有分支的末端汇入此处，用于整体复盘。",
+      "outcome": "写一页总结：已掌握的主题、仍存疑的问题、下一步方向。",
+      "caution": "这是浏览结构上的收束点，不代表学会了全部内容。",
+      "sourceIds": [
+        "obsidian"
+      ],
+      "obsidianNote": ""
+    }
+  ],
+  "applicationEdges": []
+}

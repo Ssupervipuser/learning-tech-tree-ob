@@ -1,0 +1,16 @@
+# 依赖与构建缓存
+node_modules/
+*.log
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 个人进度备份（从页面导出，含私人笔记与进度，不要提交）
+*-progress-*.json
