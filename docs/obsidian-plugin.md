@@ -4,10 +4,10 @@
 
 ## 安装
 
-插件已经安装在你的 vault 里：
+把 `obsidian-plugin/` 下三个文件复制到 vault 的插件目录：
 
 ```
-C:\ob\.obsidian\plugins\learning-tech-tree\
+<你的 vault>/.obsidian/plugins/learning-tech-tree/
 ├── main.js        插件主体
 ├── manifest.json  插件清单
 └── styles.css     样式
@@ -52,7 +52,7 @@ C:\ob\.obsidian\plugins\learning-tech-tree\
 放在 vault 的 `学习路线图/` 目录下（可在插件设置中改）：
 
 ```
-ob/
+<你的 vault>/
 └── 学习路线图/
     ├── ai.json    大模型应用路线图（31 节点）
     └── cv.json    计算机视觉路线图（25 节点）

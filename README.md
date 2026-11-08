@@ -50,7 +50,7 @@ node scripts/obsidian-import.mjs <vault路径> <要导入的文件夹> <输出js
 例如：
 
 ```sh
-node scripts/obsidian-import.mjs "C:\ob" "CV基础" "data/cv.json" "ob" "cv-basics"
+node scripts/obsidian-import.mjs "/path/to/vault" "Notes/CV" "data/cv.json" "MyVault" "cv-basics"
 ```
 
 按目录自动生成（分支=子目录，节点=笔记），适合快速看全貌。**若要做严格的学习路线图，建议手写 JSON**——自动生成的先修关系只是文件顺序，没有教学意义。

@@ -6,28 +6,64 @@
   "description": "以已有笔记为主体的学习路线图。实线是必须掌握的先修，虚线是可选方向。没有笔记的节点是待学习项目。",
   "version": "1.0",
   "language": "zh-CN",
-  "obsidianVault": "ob",
-  "obsidianNoteRoot": "06-AI大模型/99-待学",
+  "obsidianNoteRoot": "Notes/AI/99-待学",
   "education": {
     "path": "self-study",
     "duration": null,
     "note": "能力阶段划分，不代表课程安排或学制。"
   },
-  "stages": ["起点 · 深度学习基础", "NLP 与 Transformer", "预训练与微调", "提示词工程", "Agent 与编排", "RAG 与工程落地"],
+  "stages": [
+    "起点 · 深度学习基础",
+    "NLP 与 Transformer",
+    "预训练与微调",
+    "提示词工程",
+    "Agent 与编排",
+    "RAG 与工程落地"
+  ],
   "branches": [
-    { "id": "foundation", "label": "基础", "en": "FOUNDATION", "color": "#83b6df" },
-    { "id": "nlp", "label": "NLP 与 Transformer", "en": "NLP", "color": "#7bd2c4" },
-    { "id": "pretrain", "label": "预训练模型", "en": "PRETRAIN", "color": "#e5b575" },
-    { "id": "prompt", "label": "提示词工程", "en": "PROMPTING", "color": "#d98cb3" },
-    { "id": "agent", "label": "Agent 与应用", "en": "AGENT", "color": "#9f8ce0" },
-    { "id": "rag", "label": "RAG 与工程", "en": "RAG", "color": "#6ad1ad" }
+    {
+      "id": "foundation",
+      "label": "基础",
+      "en": "FOUNDATION",
+      "color": "#83b6df"
+    },
+    {
+      "id": "nlp",
+      "label": "NLP 与 Transformer",
+      "en": "NLP",
+      "color": "#7bd2c4"
+    },
+    {
+      "id": "pretrain",
+      "label": "预训练模型",
+      "en": "PRETRAIN",
+      "color": "#e5b575"
+    },
+    {
+      "id": "prompt",
+      "label": "提示词工程",
+      "en": "PROMPTING",
+      "color": "#d98cb3"
+    },
+    {
+      "id": "agent",
+      "label": "Agent 与应用",
+      "en": "AGENT",
+      "color": "#9f8ce0"
+    },
+    {
+      "id": "rag",
+      "label": "RAG 与工程",
+      "en": "RAG",
+      "color": "#6ad1ad"
+    }
   ],
   "sources": [
     {
       "id": "notes",
       "title": "本人 Obsidian 笔记",
       "url": "",
-      "scope": "vault 内 06-AI大模型 与 02Python 的既有笔记，点击节点可直接跳转。"
+      "scope": "vault 内 Notes/AI 与 Notes/Python 的既有笔记，点击节点可直接跳转。"
     },
     {
       "id": "design",
@@ -50,8 +86,10 @@
       "description": "假定 Python 语法、虚拟环境与调试已掌握。本节点作为路线图入口，指向既有 Python 笔记。",
       "outcome": "能独立跑通一个带第三方依赖的脚本，并用断点或日志定位报错。",
       "caution": "此节点是入口锚点，不代表需要从头重学。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "02Python/windows安装虚拟环境.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/Python/windows安装虚拟环境.md"
     },
     {
       "id": "dl_intro",
@@ -59,13 +97,17 @@
       "branch": "foundation",
       "stage": 0,
       "kind": "core",
-      "prereqIds": ["py_anchor"],
+      "prereqIds": [
+        "py_anchor"
+      ],
       "relatedIds": [],
       "description": "深度学习要解决什么问题、与传统方法的区别、整体学习地图。",
       "outcome": "能用一段话说明监督学习、损失函数与优化三者的关系。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/03-深度学习/00深度学习简介.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/03-深度学习/00深度学习简介.md"
     },
     {
       "id": "nn_basic",
@@ -73,13 +115,17 @@
       "branch": "foundation",
       "stage": 0,
       "kind": "core",
-      "prereqIds": ["dl_intro"],
+      "prereqIds": [
+        "dl_intro"
+      ],
       "relatedIds": [],
       "description": "前向传播、反向传播、损失与梯度更新的完整链条。",
       "outcome": "手写一个两层网络的训练循环，并解释每一次参数更新。",
       "caution": "不理解梯度来源会导致调参变成碰运气。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/03-深度学习/02神经网络基础ANN.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/03-深度学习/02神经网络基础ANN.md"
     },
     {
       "id": "pytorch",
@@ -87,13 +133,17 @@
       "branch": "foundation",
       "stage": 0,
       "kind": "core",
-      "prereqIds": ["nn_basic"],
+      "prereqIds": [
+        "nn_basic"
+      ],
       "relatedIds": [],
       "description": "张量、自动求导、模型保存加载，以及 HuggingFace Transformers 的基本用法。",
       "outcome": "加载一个预训练模型完成一次推理，并说明输入输出张量的含义。",
       "caution": "库的 API 变化快，优先掌握概念而非记忆调用。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/03-深度学习/01PyTorch框架使用.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/03-深度学习/01PyTorch框架使用.md"
     },
     {
       "id": "rnn",
@@ -101,13 +151,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "core",
-      "prereqIds": ["nn_basic"],
+      "prereqIds": [
+        "nn_basic"
+      ],
       "relatedIds": [],
       "description": "序列建模、RNN/LSTM/GRU 的结构与梯度问题。",
       "outcome": "说明 LSTM 的门控如何缓解长序列梯度消失。",
       "caution": "理解 RNN 的局限，才知道 Transformer 为何取代它。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/3LSTM模型.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/3.RNN及其变体/3LSTM模型.md"
     },
     {
       "id": "attention",
@@ -115,13 +169,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "core",
-      "prereqIds": ["rnn"],
+      "prereqIds": [
+        "rnn"
+      ],
       "relatedIds": [],
       "description": "注意力的直觉：从序列对齐到加权求和，Query/Key/Value 的来源。",
       "outcome": "用矩阵形式写出缩放点积注意力的计算过程。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/3.RNN及其变体/6注意力机制介绍1.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/3.RNN及其变体/6注意力机制介绍1.md"
     },
     {
       "id": "transformer",
@@ -129,13 +187,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "core",
-      "prereqIds": ["attention"],
+      "prereqIds": [
+        "attention"
+      ],
       "relatedIds": [],
       "description": "编码器-解码器结构、位置编码、多头注意力与残差层归一化。",
       "outcome": "画出 Transformer 的完整结构图，并说明每个模块的数据流。",
       "caution": "这是大模型时代最重要的结构，务必理解透彻。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/2认识Transformer架构.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/4.Transformer/2认识Transformer架构.md"
     },
     {
       "id": "transformer_code",
@@ -143,13 +205,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "core",
-      "prereqIds": ["transformer"],
+      "prereqIds": [
+        "transformer"
+      ],
       "relatedIds": [],
       "description": "输入部分、编码器、解码器、输出部分的分步实现与张量形状追踪。",
       "outcome": "从零实现一个可运行的 Transformer，并解释每一步形状变化。",
       "caution": "只读结构不实现，很难发现理解上的漏洞。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/4.Transformer/7模型构建.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/4.Transformer/7模型构建.md"
     },
     {
       "id": "self_attention",
@@ -157,13 +223,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "optional",
-      "prereqIds": ["attention"],
+      "prereqIds": [
+        "attention"
+      ],
       "relatedIds": [],
       "description": "自注意力的计算细节、多头为何有效、各子模块的具体作用。",
       "outcome": "能回答「为什么需要多头」「位置编码为何用正弦函数」。",
       "caution": "细节问题，可在面试准备或调优时回头查阅。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/7.Transformer精选问答(拓展资料)/3 Self attention机制详解.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/7.Transformer精选问答(拓展资料)/3 Self attention机制详解.md"
     },
     {
       "id": "text_preprocess",
@@ -171,13 +241,17 @@
       "branch": "nlp",
       "stage": 1,
       "kind": "optional",
-      "prereqIds": ["nn_basic"],
+      "prereqIds": [
+        "nn_basic"
+      ],
       "relatedIds": [],
       "description": "分词、词表构建、文本张量表示与数据分析方法。",
       "outcome": "能说明 subword 分词相对词级分词的优势。",
       "caution": "传统 NLP 流程，现代大模型已大幅简化，可按需了解。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/2.文本预处理/1认识文本预处理.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/2.文本预处理/1认识文本预处理.md"
     },
     {
       "id": "embedding",
@@ -185,13 +259,17 @@
       "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": ["transformer"],
+      "prereqIds": [
+        "transformer"
+      ],
       "relatedIds": [],
       "description": "词向量的本质、预训练加微调的范式、对比学习与负样本的作用。",
       "outcome": "说明预训练如何把通用语言知识迁移到下游任务。",
       "caution": "预训练范式是理解 BERT 与 LLM 的基础。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/5.迁移学习/5迁移学习概念.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/5.迁移学习/5迁移学习概念.md"
     },
     {
       "id": "bert",
@@ -199,13 +277,17 @@
       "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": ["embedding"],
+      "prereqIds": [
+        "embedding"
+      ],
       "relatedIds": [],
       "description": "双向编码与自回归生成的区别、各自适用的任务类型。",
       "outcome": "能说明 BERT 与 GPT 在预训练目标和推理方式上的差异。",
       "caution": "搞混两类模型会导致选型错误。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/NLP/6.Bert系列模型/6 BERT GPT ELMo模型的对比.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/NLP/6.Bert系列模型/6 BERT GPT ELMo模型的对比.md"
     },
     {
       "id": "finetune_llm",
@@ -213,13 +295,18 @@
       "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": ["bert", "pytorch"],
+      "prereqIds": [
+        "bert",
+        "pytorch"
+      ],
       "relatedIds": [],
       "description": "全参数微调与参数高效微调（LoRA 等）、数据构建与训练流程。",
       "outcome": "说明在什么情况下选择微调而非提示词工程。",
       "caution": "微调成本高，很多需求用提示词就能解决。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/大模型微调课件/01-大模型微调技术全景.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/大模型微调课件/01-大模型微调技术全景.md"
     },
     {
       "id": "finetune_data",
@@ -227,13 +314,17 @@
       "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": ["finetune_llm"],
+      "prereqIds": [
+        "finetune_llm"
+      ],
       "relatedIds": [],
       "description": "指令数据的格式、质量把控、数据清洗与划分。",
       "outcome": "产出一份可用于微调的高质量数据集，并说明筛选标准。",
       "caution": "数据质量比数据量更决定微调效果。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/大模型微调课件/03-数据处理.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/大模型微调课件/03-数据处理.md"
     },
     {
       "id": "finetune_train",
@@ -241,13 +332,17 @@
       "branch": "pretrain",
       "stage": 2,
       "kind": "core",
-      "prereqIds": ["finetune_data"],
+      "prereqIds": [
+        "finetune_data"
+      ],
       "relatedIds": [],
       "description": "训练过程监控、显存管理、模型合并、推理部署与效果评估。",
       "outcome": "完成一次端到端微调并给出训练前后的对比评估。",
       "caution": "训练损失下降不代表实际效果变好。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/大模型微调课件/04-模型训练.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/大模型微调课件/04-模型训练.md"
     },
     {
       "id": "prompt_basic",
@@ -255,13 +350,17 @@
       "branch": "prompt",
       "stage": 3,
       "kind": "core",
-      "prereqIds": ["bert"],
+      "prereqIds": [
+        "bert"
+      ],
       "relatedIds": [],
       "description": "角色设定、指令清晰化、示例引导与输出格式约束。",
       "outcome": "为同一任务写出三个提示版本，并对比输出的稳定性。",
       "caution": "提示有效不等于可复现，需固定模型与参数。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/提示词工程/2.1大模型提示词工程基础.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/提示词工程/2.1大模型提示词工程基础.md"
     },
     {
       "id": "cot",
@@ -269,13 +368,17 @@
       "branch": "prompt",
       "stage": 3,
       "kind": "core",
-      "prereqIds": ["prompt_basic"],
+      "prereqIds": [
+        "prompt_basic"
+      ],
       "relatedIds": [],
       "description": "逐步推理提示、自洽性、以及何时 CoT 反而不如直接回答。",
       "outcome": "在推理类任务上对比 CoT 与直接回答的准确率差异。",
       "caution": "简单任务上 CoT 可能降低效果。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/提示词工程/什么是思维链 (Chain-of-Thought, CoT)？.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/提示词工程/什么是思维链 (Chain-of-Thought, CoT)？.md"
     },
     {
       "id": "prompt_advanced",
@@ -283,13 +386,17 @@
       "branch": "prompt",
       "stage": 3,
       "kind": "core",
-      "prereqIds": ["cot"],
+      "prereqIds": [
+        "cot"
+      ],
       "relatedIds": [],
       "description": "复杂任务拆解、多轮对话管理、上下文控制与提示模板化。",
       "outcome": "为一个真实业务场景设计可复用的提示模板。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/提示词工程/2.2大模型提示词工程进阶.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/提示词工程/2.2大模型提示词工程进阶.md"
     },
     {
       "id": "llm_dev",
@@ -297,13 +404,17 @@
       "branch": "prompt",
       "stage": 3,
       "kind": "optional",
-      "prereqIds": ["prompt_basic"],
+      "prereqIds": [
+        "prompt_basic"
+      ],
       "relatedIds": [],
       "description": "模型选型、API 调用方式、成本与延迟的权衡。",
       "outcome": "给出一份模型选型对比表，含成本、延迟与能力边界。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/提示词工程/1.2大模型开发技术.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/提示词工程/1.2大模型开发技术.md"
     },
     {
       "id": "coze",
@@ -311,13 +422,17 @@
       "branch": "agent",
       "stage": 4,
       "kind": "core",
-      "prereqIds": ["prompt_advanced"],
+      "prereqIds": [
+        "prompt_advanced"
+      ],
       "relatedIds": [],
       "description": "低代码搭建智能体：插件、工作流、知识库与多智能体协作。",
       "outcome": "在平台上独立搭建一个可用的智能体并说明其编排逻辑。",
       "caution": "低代码平台能快速验证想法，但深度定制受限。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/1.2 Coze平台入门实战.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/coze/1.2 Coze平台入门实战.md"
     },
     {
       "id": "multi_agent",
@@ -325,13 +440,17 @@
       "branch": "agent",
       "stage": 4,
       "kind": "core",
-      "prereqIds": ["coze"],
+      "prereqIds": [
+        "coze"
+      ],
       "relatedIds": [],
       "description": "角色分工、任务分发、协作与冲突处理的组织方式。",
       "outcome": "设计一个双智能体协作方案，说明分工依据与失败兜底。",
       "caution": "多智能体增加复杂度，单智能体够用时不必强行拆分。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/2.3 Multi-Agent多智能体.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/coze/2.3 Multi-Agent多智能体.md"
     },
     {
       "id": "agent_project",
@@ -339,13 +458,17 @@
       "branch": "agent",
       "stage": 4,
       "kind": "milestone",
-      "prereqIds": ["multi_agent"],
+      "prereqIds": [
+        "multi_agent"
+      ],
       "relatedIds": [],
       "description": "完整项目的模块划分、编排流程、调试与上线。",
       "outcome": "交付一个可演示的智能体项目，含编排图与失败处理说明。",
       "caution": "演示成功不等于稳定，需说明适用边界。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/coze/3.5 智能体编排.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/coze/3.5 智能体编排.md"
     },
     {
       "id": "langgraph",
@@ -353,13 +476,17 @@
       "branch": "agent",
       "stage": 4,
       "kind": "optional",
-      "prereqIds": ["multi_agent"],
+      "prereqIds": [
+        "multi_agent"
+      ],
       "relatedIds": [],
       "description": "用状态机编排 Agent 流程：节点、边、条件分支与状态持久化。",
       "outcome": "用 LangGraph 实现一个带条件分支与重试的最小可运行流程。",
       "caution": "此节点已有笔记但内容较简，建议补充实现练习。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/LangGraph/状态机.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/LangGraph/状态机.md"
     },
     {
       "id": "langchain",
@@ -367,12 +494,17 @@
       "branch": "agent",
       "stage": 4,
       "kind": "optional",
-      "prereqIds": ["multi_agent", "pytorch"],
+      "prereqIds": [
+        "multi_agent",
+        "pytorch"
+      ],
       "relatedIds": [],
       "description": "模型封装、提示模板、输出解析、链式组合与工具调用。",
       "outcome": "用 LangChain 拼出一个可运行的问答链，并说明每层封装的作用。",
       "caution": "框架抽象随版本变化快，先掌握底层调用再依赖封装。",
-      "sourceIds": ["design"]
+      "sourceIds": [
+        "design"
+      ]
     },
     {
       "id": "dify",
@@ -380,13 +512,17 @@
       "branch": "rag",
       "stage": 5,
       "kind": "core",
-      "prereqIds": ["coze"],
+      "prereqIds": [
+        "coze"
+      ],
       "relatedIds": [],
       "description": "开源 LLM 应用平台的部署、知识库接入与工作流编排。",
       "outcome": "本地部署 Dify 并跑通一个带知识库的问答应用。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/1.1 Dify平台介绍.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/dify/1.1 Dify平台介绍.md"
     },
     {
       "id": "rag_basic",
@@ -394,13 +530,17 @@
       "branch": "rag",
       "stage": 5,
       "kind": "core",
-      "prereqIds": ["dify"],
+      "prereqIds": [
+        "dify"
+      ],
       "relatedIds": [],
       "description": "文档切分、向量化、相似度检索、上下文拼装与来源引用。",
       "outcome": "搭一个能回答自有文档的 RAG，并给出检索命中率。",
       "caution": "回答错误常常来自检索而非生成，需分开诊断。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/2.2 RAG和知识库.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/dify/2.2 RAG和知识库.md"
     },
     {
       "id": "rag_external",
@@ -408,13 +548,17 @@
       "branch": "rag",
       "stage": 5,
       "kind": "optional",
-      "prereqIds": ["rag_basic"],
+      "prereqIds": [
+        "rag_basic"
+      ],
       "relatedIds": [],
       "description": "接入外部向量库或企业知识源，处理权限与更新同步。",
       "outcome": "说明外部知识库方案中数据更新与权限控制的处理方式。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/2.3 Dify接入外部知识库.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/dify/2.3 Dify接入外部知识库.md"
     },
     {
       "id": "ragflow",
@@ -422,13 +566,17 @@
       "branch": "rag",
       "stage": 5,
       "kind": "optional",
-      "prereqIds": ["rag_basic"],
+      "prereqIds": [
+        "rag_basic"
+      ],
       "relatedIds": [],
       "description": "深度文档理解的 RAG 引擎：解析、分块策略与检索优化。",
       "outcome": "对比 RAGFlow 与基础向量检索在复杂文档上的效果差异。",
       "caution": "可作为 RAG 方案选型的备选，不必与 Dify 同时深入。",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/08-RAGFlow配置原理.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/08-RAGFlow配置原理.md"
     },
     {
       "id": "rag_project",
@@ -436,13 +584,17 @@
       "branch": "rag",
       "stage": 5,
       "kind": "milestone",
-      "prereqIds": ["rag_basic"],
+      "prereqIds": [
+        "rag_basic"
+      ],
       "relatedIds": [],
       "description": "从需求到上线的完整 RAG 项目：数据处理、检索优化、评估与迭代。",
       "outcome": "交付一个可演示的 RAG 应用，含检索命中率与失败分析。",
       "caution": "",
-      "sourceIds": ["notes"],
-      "obsidianNote": "06-AI大模型/智能体开发/dify/3.1 智能法律助手.md"
+      "sourceIds": [
+        "notes"
+      ],
+      "obsidianNote": "Notes/AI/智能体开发/dify/3.1 智能法律助手.md"
     },
     {
       "id": "rag_eval_todo",
@@ -450,12 +602,16 @@
       "branch": "rag",
       "stage": 5,
       "kind": "core",
-      "prereqIds": ["rag_project"],
+      "prereqIds": [
+        "rag_project"
+      ],
       "relatedIds": [],
       "description": "构建评估集、检索与生成的分离评估、回归检测与失败分类。",
       "outcome": "沉淀一个小型评估集，并在改动前后给出可对比的结论。",
       "caution": "没有评估体系的 RAG 优化只能靠感觉。",
-      "sourceIds": ["design"]
+      "sourceIds": [
+        "design"
+      ]
     },
     {
       "id": "ai_finish",
@@ -463,12 +619,19 @@
       "branch": "rag",
       "stage": 5,
       "kind": "milestone",
-      "prereqIds": ["agent_project", "rag_project", "rag_eval_todo", "finetune_train"],
+      "prereqIds": [
+        "agent_project",
+        "rag_project",
+        "rag_eval_todo",
+        "finetune_train"
+      ],
       "relatedIds": [],
       "description": "把 Agent、RAG 与微调经验整合成一个完整、可复现、可评估的应用。",
       "outcome": "交付含代码、数据说明、评估记录与局限声明的作品条目。",
       "caution": "不可复现的结果在技术评审中价值有限。",
-      "sourceIds": ["design"]
+      "sourceIds": [
+        "design"
+      ]
     }
   ],
   "applicationEdges": [

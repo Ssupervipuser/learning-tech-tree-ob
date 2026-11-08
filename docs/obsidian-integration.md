@@ -18,7 +18,7 @@
 | 结论 | 证据 |
 |---|---|
 | `obsidian://open` 能从页面点击拉起 Obsidian 并精确打开指定笔记 | 浏览器日志 `Launched external handler`，活动笔记由 AlexNet 切到 GoogLeNet |
-| `obsidian://new` 能创建笔记 | 实测在 `CV基础/99-待学/语义分割.md` 成功生成文件 |
+| `obsidian://new` 能创建笔记 | 实测在 `Notes/CV/99-待学/语义分割.md` 成功生成文件 |
 | 额外字段能通过校验器 | `obsidianVault` / `obsidianNote` / `obsidianNoteRoot` 不在 schema 的 `required` 里 |
 | `obsidian://` **不能**放进 `sources[].url` | `app.js` 的 `safeSource()` 只放行 `http(s)://` |
 | 必须真实鼠标点击 | 脚本 `a.click()` 或赋值 `location.href` 会被拒绝：`user gesture is required` |
@@ -29,15 +29,15 @@
 
 ```json
 {
-  "obsidianVault": "ob",
-  "obsidianNoteRoot": "CV基础/99-待学"
+  "obsidianVault": "MyVault",
+  "obsidianNoteRoot": "Notes/CV/99-待学"
 }
 ```
 
 节点级：
 
 ```json
-{ "id": "resnet", "obsidianNote": "CV基础/01-图像分类/05-ResNet.md" }
+{ "id": "resnet", "obsidianNote": "Notes/CV/01-图像分类/05-ResNet.md" }
 { "id": "seg_todo", "name": "语义分割【待学习】", "obsidianTodo": true }
 ```
 
